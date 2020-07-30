@@ -28,7 +28,7 @@ init();
 
 //function해석 : 만약 currentClass가 CLICKED_CLASS와 값이 같지 않으면, "title.className = CLICKED_CLASS" 이 className을 주고, 값이 같으면 else{title.className = "";}처럼 공백을 주면 정상적으로 작동한다.
 
-//! 하지만 html의 h1에 class="btn" 을 부여하고 css에서 cursor:pointer 속성을 부여했을 경우, 처음 클릭할때만 커서 포인트만 css적용되고 그 이후부터는 적용되지 않는 것을 알 수 있다. 따라서 이런 경우에는 classList가 필요하게 된다.
+//! 하지만 html의 h1에 class="btn" 을 부여하고 css에서 cursor:pointer 속성을 부여했을 경우, 처음 클릭할때만 커서 포인트만 css적용되고 그 이후부터는 적용되지 않는 것을 알 수 있다. 따라서 이런 경우에는 classList가 필요하게 된다. /아마도 class가 겹치기때문에 그런 것 아닐까싶다.
 
 //
 //
@@ -80,7 +80,7 @@ function init() {
 }
 init();
 // browser result = pointer속성의 유지와 함께 클릭시 색상변경 작동 잘 됨.
-
+// 만약 !hasClass가 아닌 hasClass로 작성하고 싶다면 add와 remove의 위치를 바꿔주면된다.
 //
 //
 //? ============= 4) classList - toggle ==============

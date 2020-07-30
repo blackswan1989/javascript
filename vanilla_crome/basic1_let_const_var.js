@@ -16,7 +16,7 @@
   * const b = a - 5;
   * console.log(b, a);
   ! output = 216, 221
-
+  첫번째 예시처럼 a = 4;를 입력해도 a가 변하지 않고 에러가 뜬다.
  
 ? var도 let처럼 값을 변하게 할 수 있다. 다만 var는 const나 let이 없을 때 주로 사용했었던 코드이다.
   * var a = 221;

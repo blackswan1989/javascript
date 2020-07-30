@@ -15,6 +15,7 @@ sayHello("Jane", 25);
 //
 //
 //! ========== return의 사용법 ==========
+//? retrun : 명령문은 함수 실행을 종료하고, 주어진 값을 함수 호출 지점으로 반환하는 것으로 즉 함수를 호출했던 위치로 되돌아가라는 의미이다.
 //2)
 function sayHello(name, age) {
   console.log(`Hello ${name} you are ${age} years old`);

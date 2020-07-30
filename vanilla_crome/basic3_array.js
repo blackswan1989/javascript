@@ -21,16 +21,7 @@ console.log(monday, tue, wed, thu, fri);
 
 // 따라서 array "[]"를 사용해준다.
 
-const daysOfWeek = [
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat",
-  "Sun",
-  "something",
-];
+const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", something];
 
 console.log(daysOfWeek);
 
