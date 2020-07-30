@@ -44,7 +44,3 @@ body {
 .js-title {
   font-size: 10rem;
 }
-
-.js-toDoList {
-  /* 각각의 ul을 선택해줘야하는데 js로 만든 걸 어떻게 선택하지?*/
-}
