@@ -42,13 +42,9 @@ body {
 }
 
 .js-title {
-  display: flex;
   font-size: 10rem;
-  align-items: center; /* 가운데정렬이 왜안되냐 */
 }
 
 .js-toDoList {
-  text-decoration: none;
-  border-bottom: 1px solid #ffffff;
   /* 각각의 ul을 선택해줘야하는데 js로 만든 걸 어떻게 선택하지?*/
 }
