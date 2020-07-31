@@ -8,7 +8,7 @@ function paintImage(imgNumber) {
   const image = new Image();
   image.src = `images/${imgNumber + 1}.jpg`;
   // +1을 주는 이유는 Math.random()함수가 0을 줄 수도 있기 때문이다.
-  image.classList.add("bgImage");
+  image.classList.add("bgImage"); //class name 부여
   body.prepend(image);
 }
 

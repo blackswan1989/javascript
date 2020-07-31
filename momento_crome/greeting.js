@@ -27,7 +27,7 @@ function handleSubmit(event) {
 
 //5) 1)currentUser가 null일 때(없을 때)동작하는 함수로 askForName을 생성.
 function askForName() {
-  form.classList.add(SHOWING_CN); // null상탵일때 "what is your name"을 표시하도록
+  form.classList.add(SHOWING_CN); // null상태일때 "what is your name"을 표시하도록
   form.addEventListener("submit", handleSubmit); //텍스트 입력시 정보를 submit하도록
 }
 
