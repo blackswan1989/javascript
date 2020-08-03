@@ -1,0 +1,65 @@
+<!-- TODO 1boonCoding Vanilla JS BASIC : DOM SCRIPT EVENT -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Something</title>
+    <title>Practice DOM</title>
+    <style>
+      #main-title {
+        background-color: yellow;
+        font-size: 5rem;
+        font-weight: 800;
+      }
+
+      .menu {
+        display: flex;
+        background-color: skyblue;
+      }
+
+      .menu-link {
+        margin: 0.1em;
+        padding: 0.3em;
+        color: #fff;
+        text-decoration: none;
+        background-color: dodgerblue;
+        list-style: none;
+      }
+
+      .menu-active {
+        background-color: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="main-title">EVENT</h1>
+
+    <nav class="menu">
+      <a href="#" class="menu-link" date-menu="1">MENU 1</a>
+      <a href="#" class="menu-link" date-menu="1">MENU 2</a>
+      <a href="#" class="menu-link" date-menu="1">MENU 3</a>
+    </nav>
+
+    <script>
+      // DOM_1파일에서 2)부분까지 이벤트위임을 통한 코드개선하고자 함.
+      // nav class="menu"에 이벤트 위임을 주고자한다. 즉 부모 class에게 위임.
+      var currentMenu;
+      var menu = document.querySelector(".menu");
+
+      function clickHandler(evnet) {
+        // console.log(this); // menu1~3을 클릭하던 nav menu부모 범위를 클릭하던 "this"는 menu가 console에 출력되는것을 확인 할 수 있다.
+        // console.log(e); // clickHandler에 e값을 주고 콘솔을 확인해보면 클릭한 좌표, 화면 등의 정보가 확인된다.
+        // console.log(e.currentTarget); // currentTarget을 추가로 입력해주면 this를 출력했을때와 같은 로그가 확인이 된다.
+        //console.log(e.target); // e.target만 입력해주면 해당 클릭하는 메뉴가 선택이 가능해짐을 콘솔창에서 확인 할 수 있다.
+        if (currentMenu) {
+          currentMenu.classList.remove("menu-active");
+        }
+        event.target.classList.add("menu-active");
+        currentMenu = event.target;
+      }
+
+      menu.addEventListener("click", clickHandler);
+    </script>
+  </body>
+</html>
