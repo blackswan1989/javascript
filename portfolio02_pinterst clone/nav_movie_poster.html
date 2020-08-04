@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- free아이콘 사용처 https://fontawesome.com/ -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script
+    src="https://kit.fontawesome.com/4a2f8e6471.js"
+    crossorigin="anonymous"
+  ></script>
+    <title>Pinterest Clone</title>
+  </head>
+
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span class="status-bar__clock">00:00</span>
+      </div>
+      <div class="status-bar__column">
+        <i class="fas fa-clock"></i>
+        <i class="fas fa-volume-mute"></i>
+        <i class="fas fa-wifi"></i>
+        <span class="status-bar__battery-level">80%</span>
+        <i class="fas fa-battery-three-quarters"></i>
+      </div>
+    </div>
+      <header class = "header">
+        <h1 class="p-button"><a href="p_random.html">P</a></h1>
+      </header>
+    <nav class="navBar">
+      <ul class="navBar__column">
+        <li class="navList"><a href="index_recommend.html"> Recommend</a></li>
+        <li class="navList"><a href="nav_following.html">Following</a></li>
+        <li class="navList"><a href="nav_movie_poster.html">Movie Poster</a></li>
+        <li class="navList"><a href="nav_album_jacket.html">Album Jacket</a></li>
+        <li class="navList"><a href="nav_painting.html">Painting</a></li>
+    </nav>
+
+    <main class = "main" >
+      <!-- 이미지들 삽입, 하단에 미니 네비게이션 박스 삽입 -->
+      <section class = "section_images">
+
+        <article class = "article_images">
+          <div><img class="leftImages" src="images/poster1.jpeg"></div>
+          <span class=image_icon><i class="fas fa-ellipsis-h"></i></span>
+          <div><img class="leftImages" src="images/poster2.jpeg"></div>
+          <span class=image_icon><i class="fas fa-ellipsis-h"></i></span>
+          <div><img class="leftImages" src="images/poster3.png"></div>
+          <span class=image_icon><i class="fas fa-ellipsis-h"></i></span>
+        </article>
+
+        <article class = "article_images">
+          <div><img class="rightImages" src="images/poster4.png"></div>
+          <span class=image_icon><i class="fas fa-ellipsis-h"></i></span>
+          <div><img class="rightImages" src="images/poster5.jpeg"></div>
+          <span class=image_icon><i class="fas fa-ellipsis-h"></i></span>
+        </article>
+      </section>
+
+      <aside class = "bottomBtnBox">
+        <div class="btnBoxList"><a href="bottom_btn_home.html">
+        <i class="fas fa-home"></a></i>
+        </div>
+        <div class="btnBoxList"><a href="bottom_btn_serch.html">
+        <i class="fas fa-search"></a></i></div>
+        <div class="btnBoxList"><i class="fas fa-comment-dots"></i></div>
+        <div class="btnBoxList"><i class="fas fa-user"></i></div>
+      </aside>
+
+    </main>
+
+    <footer>
+      2020. 08. 01.
+    </footer>
+  </body>
+</html>
