@@ -64,3 +64,9 @@ localStorage.setItem('COUNTRY', selected)
 // 4. option 참조(https://developer.mozilla.org/ko/docs/Web/HTML/Element/option)
 
 // 5. .querySelector() 참조(https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector) Check out the section: 좀 더 복잡한 선택자
+
+/*
+? 기타 참조 사이트
+? https://dongsub-joung.github.io/2020/02/01/VanillaJS_challenge4.html
+? https://im-developer.tistory.com/47
+*/
