@@ -12,15 +12,15 @@ const superEventHandler = {
   },
   handleMouseIn: function handleHoverIn() {
     title.style.color = colors[0];
-    title.innerHTML = "yor mouse is here.";
+    title.innerHTML = "mouse is here.";
   },
   handleMouseOut: function handleHoverOut() {
     title.style.color = colors[4];
-    title.innerHTML = "yor mouse is gone. Come here!!";
+    title.innerHTML = "mouse is gone. Come here!!";
   },
   handleRightClick: function handleWindowClick() {
     title.style.color = colors[2];
-    title.innerHTML = "yor was a right click!";
+    title.innerHTML = "you was a right click!";
   },
 };
 
