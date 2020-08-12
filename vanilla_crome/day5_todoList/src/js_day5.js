@@ -50,8 +50,6 @@ function deleteFinishToDo(event) {
   saveFinToDos();
 }
 
-/*localstorage.setitem*/
-
 function penToFin(event) {
   deletePenToDo(event);
   const delbtn = event.target;
