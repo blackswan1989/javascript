@@ -127,11 +127,17 @@ input::placeholder {
 
 button {
   margin-left: 3px;
-  background-color: transparent !important;
-  background-image: none !important;
+  background-color: transparent;
+  background-image: none;
   border-color: transparent;
   border: none;
   color: pink;
   outline: none;
   cursor: pointer;
+}
+
+button:hover {
+  border-radius: 30%;
+
+  background: palevioletred;
 }
