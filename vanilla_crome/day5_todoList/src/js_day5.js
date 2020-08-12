@@ -161,11 +161,3 @@ init();
 4. Save everything on localStorage and restore everything on refresh.
   (localStorage에 모든 것을 저장하고 새로 고침시 모든 것을 복원하십시오.)
 */
-
-/* 슬랙 코드 공유
- * const btn = event.target;  // 이벤트가 일어난 타겟(버튼)
- * const li = btn.parentNode;  // 그 버튼의 부모노드 li
- * const text = li.childNodes[0].innerText;  //li의 자식노드의  span에 포함되어있는 텍스트
- * 버튼이 눌렸던 텍스트를 다른 함수에서 가져와 사용하실때 필요한 코드..? 라고 생각해서 공유해드립니다
- * 물론 저와 다른 방법을 사용하신 분들도 계시겠지요!
- */
