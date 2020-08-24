@@ -1,4 +1,4 @@
-//TODO math object(객체) 만들기 //
+//TODO math object(객체) calculator 만들기 //
 
 const calculator = {
   plus: function (a, b) {

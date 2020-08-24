@@ -1,0 +1,90 @@
+<!-- TODO 1boonCoding Vanilla JS BASIC : DOM SCRIPT EVENT -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Something</title>
+    <title>Practice DOM</title>
+    <style>
+      #main-title {
+        background: yellow;
+        font-size: 5rem;
+        font-weight: 800;
+      }
+
+      .menu {
+        display: flex;
+      }
+
+      .menu-link {
+        margin: 0.1em;
+        padding: 0.3em;
+        color: #fff;
+        text-decoration: none;
+        background: dodgerblue;
+        list-style: none;
+      }
+
+      .menu-active {
+        background: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="main-title">EVENT</h1>
+
+    <nav class="menu">
+      <a href="#" class="menu-link" date-menu="1">MENU 1</a>
+      <a href="#" class="menu-link" date-menu="1">MENU 2</a>
+      <a href="#" class="menu-link" date-menu="1">MENU 3</a>
+    </nav>
+
+    <script>
+      //3)-6 의 현재 활성화된 메뉴를 담을 변수 선언 및 변수 값을 부여
+      var currentMenu;
+      //1)
+      var menuLinks = document.querySelectorAll(".menu-link");
+
+      //3) 2번에 대하여 함수 선언해주기
+      function clickMenuHandler() {
+        //3)-1 console.log("click!"); // MENU1,2,3 클릭시 정상출력 확인.
+        //3)-2 menuLinks[0].classList.add("menu-active"); // 클릭시 menu-active컬러가 활성화 되도록 할 수는있지만 0번째만 활성화 됨.
+        //3)-3 this.classList.add("menu-active"); // 따라서 this를 넣어주면 addEventListner가 붙은 것을 선택해주게 된다. (즉 클릭한것을 잡아내줌) 하지만 다른 것을 클릭했을때 동시에 선택이 된다.
+        //
+        //3)-4 따라서 for문을 주석처리하고 코드를 개선하고자 함.
+        /*
+        for (var i = 0; i < menuLinks.length; i++) {
+          menuLinks[i].classList.remove("menu-active");
+        }
+        this.classList.add("menu-active");
+        */
+        // 다른 메뉴를 클릭했을때 기존의 클릭한것은 해제 시켜주고자 for문 사용. 클릭하는 메뉴마다 색상이 바뀌며 정상작동되나, 단순한 작업이 아닌 많은 양을 이렇게 처리하기엔 for문이 너무 많이 돌게 된다.
+        //
+        //3)-5 if(activeMenu가 있을때만) 그 아래 코드를 실행해주도록 함.
+        /*
+        var activeMenu = document.querySelector(".menu-active");
+        if (activeMenu) {
+          activeMenu.classList.remove("menu-active");
+        }
+        this.classList.add("menu-active");
+        */
+        //그러나 이 방법도 많은 양이 되었을 때나 dom이나 class가 없는 canvas태그와 같은 경우에는 사용 할 수가 없다는 단점이 있다. 따라서 이런 방식을 많이 사용하긴 하지만 좀 더 범용적인 코드를 작성하려고 한다.
+        //
+        //3)-6 현재 활성화된 메뉴를 담을 변수를 추가로 만들어 사용한다.
+        if (currentMenu) {
+          currentMenu.classList.remove("menu-active");
+        }
+        this.classList.add("menu-active");
+        currentMenu = this;
+        // 즉 위의 코드를 해석하면 = if (currentMenu)가 활성화 된 상태일 때, currentMenu.classList.remove("menu-active") 코드가 실행되어 활성화 된 코드를 remove해주며, 그 다음줄에서 지금 내가 누른 this를 활성화 해주고, this를 currentMenu로 갱신을 시켜주도록 한다. 그래야 지금 내가 누른 this가 currentMenu 들어가있을 것이기 때문이다.
+        // 3)-4, 3)-5 보다 효율적인 코드라고 할 수 있다. 노마드코더에서 주로 사용하는 방식이었는데 그게 가장 효율적인 듯 하긴 한가보다.
+      }
+
+      //2) for문을 통하여 반복되도록 해주고, 메뉴를 클릭하면 이벤트가 발생하도록.
+      for (var i = 0; i < menuLinks.length; i++) {
+        menuLinks[i].addEventListener("click", clickMenuHandler);
+      }
+    </script>
+  </body>
+</html>

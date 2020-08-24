@@ -82,3 +82,6 @@ function init() {
   loadCoords();
 }
 init();
+
+
+

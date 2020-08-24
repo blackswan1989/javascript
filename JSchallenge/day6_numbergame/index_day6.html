@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h1>Random Number Game</h1>
+    <h2 class="number-generate">Generate a number between 0 and 200</h2>
+    <form class="number-setting">
+      <input type="range" min="0" max="200" step="1" list="tickmarks" />
+      <datalist id="tickmarks">
+        <option value="40"></option>
+        <option value="80"></option>
+        <option value="120"></option>
+        <option value="160"></option>
+      </datalist>
+      <h3>
+        Guess the number :
+        <input type="number" />
+        <input type="submit" value="play!" onclick="getRandom('min','max')" />
+      </h3>
+    </form>
+    <div class="number-chose">
+      <h4 class="user-chose">You Chose : 00 ,</h4>
+      <h4 class="machine-chose">The machine Chose : 00</h4>
+      <h5>YOU WON??</h5>
+    </div>
+    <script src="src/js_day6.js"></script>
+  </body>
+</html>
+
+<!-- 파일선택 타입
+<input type="file" name="file" onchange="this.form.submit()" />
+-->
+
+<!--
+  <input
+          class="result"
+          name="result"
+          for="slider"
+          oninput="slider.value=result.value"
+        />
+-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h1>Random Number Game</h1>
+    <form id="js-range">
+      <h2>Generate a number between 0 and 200</h2>
+      <input
+        id="slider"
+        type="range"
+        name="range"
+        value="0"
+        min="0"
+        max="200"
+        step="1"
+        oninput="handleRangebar(this.value)"
+        list="tickmarks"
+      />
+      <datalist id="tickmarks">
+        <option value="40"></option>
+        <option value="80"></option>
+        <option value="120"></option>
+        <option value="160"></option>
+      </datalist>
+      <h1></h1>
+    </form>
+    <form id="random">
+      Guess the number :
+      <input
+        id="inputNum"
+        type="number"
+        value=""
+        min="0"
+        max="200"
+        placeholder="Add Number"
+      />
+      <input id="handle" type="submit" value="play!" />
+    </form>
+    <form id="ans"></form>
+    <script src="src/js2.js"></script>
+  </body>
+</html>
+
+<!-- 파일선택 타입
+<input type="file" name="file" onchange="this.form.submit()" />
+-->
+
+<!--
+  <input
+          class="result"
+          name="result"
+          for="slider"
+          oninput="slider.value=result.value"
+        />
+-->

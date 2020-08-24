@@ -1,5 +1,3 @@
-// greeting.js의 const form과 겹치므로 const toDoForm 으로 작성
-
 const toDoForm = document.querySelector(".js-toDoForm"),
   toDoInput = toDoForm.querySelector("input"),
   toDoList = document.querySelector(".js-toDoList");

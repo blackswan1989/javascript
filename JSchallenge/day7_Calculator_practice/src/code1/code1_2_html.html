@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/vendors~app~embed~sandbox-startup.d3b17bc1b.chunk.js"
+    ></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/sandbox-startup.db4dfcfe7.js"
+    ></script>
+
+    <script
+      src="//codesandbox.io/static/browserfs8/browserfs.min.js"
+      type="text/javascript"
+    ></script>
+
+    <script>
+      window.process = BrowserFS.BFSRequire("process");
+      window.Buffer = BrowserFS.BFSRequire("buffer").Buffer;
+    </script>
+
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="src/index.js" defer></script>
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <div class="calculator__structure">
+      <div class="result">
+        <div class="previousResult"></div>
+        <div class="currentResult"></div>
+      </div>
+      <button class="spanTwo js-clearAll">CLEAR</button>
+      <button class="js-delete">←</button>
+      <button class="js-operation">÷</button>
+      <button class="js-intBtn">1</button>
+      <button class="js-intBtn">2</button>
+      <button class="js-intBtn">3</button>
+      <button class="js-operation">×</button>
+      <button class="js-intBtn">4</button>
+      <button class="js-intBtn">5</button>
+      <button class="js-intBtn">6</button>
+      <button class="js-operation">+</button>
+      <button class="js-intBtn">7</button>
+      <button class="js-intBtn">8</button>
+      <button class="js-intBtn">9</button>
+      <button class="js-operation">-</button>
+      <button class="js-intBtn">.</button>
+      <button class="js-intBtn">0</button>
+      <button class="spanTwo js-equal">=</button>
+    </div>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/vendors~app~codemirror-editor~monaco-editor~sandbox.e68dd7bee.chunk.js"
+    ></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/common-sandbox.26857ffcc.chunk.js"
+    ></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/vendors~sandbox.7793c0d21.chunk.js"
+    ></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/default~app~embed~sandbox.4b9f66e91.chunk.js"
+    ></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/sandbox.7ffaedd9e.js"
+    ></script>
+    <script></script>
+    <script
+      crossorigin
+      type="text/javascript"
+      src="https://codesandbox.io/static/js/watermark-button.d47e1de20.js"
+    ></script>
+  </body>
+</html>
