@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      .stage {
+        width: 100vw;
+        height: 100vh;
+        background-color: #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .door {
+        position: relative;
+        width: 100px;
+        height: 150px;
+        border: 1px solid #333;
+      }
+
+      .door-back {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        overflow: hidden;
+      }
+
+      .ilbuni {
+        position: absolute;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: 50% 100%; /* 좌우 상하*/
+        background-size: contain; /* 이미지를 화면에 꽉차게 표현 */
+        transform: translate3d(100%, 0, 0);
+        /* translate3d(100%, 0, 0)에서 %는 해당 이미지 크기전체의 100%를 의미하기 때문에 px보다 화면에따라 사용하기 편할수있다. */
+        transition: 0.5s;
+        transition-delay: 0.5s;
+      }
+
+      .door:nth-child(1) .ilbuni {
+        background-image: url(images/ilbuni_3.png);
+      }
+      .door:nth-child(2) .ilbuni {
+        background-image: url(images/ilbuni_1.png);
+      }
+      .door:nth-child(3) .ilbuni {
+        background-image: url(images/ilbuni_2.png);
+      }
+
+      .door-font {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+        transform-origin: 0%; /* transition위치를 왼쪽으로 맞춰줌. */
+      }
+      .door:nth-child(1) .door-font {
+        background-color: pink;
+        opacity: 0.95;
+      }
+      .door:nth-child(2) .door-font {
+        background-color: hotpink;
+        opacity: 0.95;
+      }
+      .door:nth-child(3) .door-font {
+        background-color: skyblue;
+        opacity: 0.95;
+      }
+
+      .door-opened .door-font {
+        transform: perspective(300px) rotateY(-110deg);
+      }
+
+      .door-opened .ilbuni {
+        transform: translate3d(0, 0, 0);
+      }
+
+      /* javascript로 이벤트를 주기 위해 주석처리 후 door-opened으로    클래스변경하여 위에 다시 작성 함.
+      .door:hover .door-font {
+        perspective를 부모가 아닌 해당 이벤트에 주면 동일한 원근감을 줄 수 있다. 
+        transform: perspective(300px) rotateY(-110deg);
+      }
+      .door:hover .ilbuni {
+        transform: translate3d(0, 0, 0);
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="door">
+        <div class="door-back">
+          <div class="ilbuni"></div>
+        </div>
+        <div class="door-font"></div>
+      </div>
+      <div class="door">
+        <div class="door-back">
+          <div class="ilbuni"></div>
+        </div>
+        <div class="door-font"></div>
+      </div>
+      <div class="door">
+        <div class="door-back">
+          <div class="ilbuni"></div>
+        </div>
+        <div class="door-font"></div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const stageElement = document.querySelector(".stage");
+        // 현재 활성화된 아이템을 저장하고있는 변수를 let currentItem으로 줌.
+        let currentItem;
+
+        function clickHandler(event) {
+          //1)event타겟을 선언해준다.
+          const targetElement = event.target;
+
+          if (currentItem) {
+            currentItem.classList.remove("door-opened");
+          }
+
+          //3)그리고 if문을 사용하여 지금 내가 클릭하는것이 door-front일때만 반응하도록 설정해준다.
+          if (targetElement.classList.contains("door-font")) {
+            //2)그냥 targetElement.classList.add("door-opened")를 설정하면 body에도 door-opened 클래스가 생성되는것을 확인할수있다. 따라서 "targetElement"타겟의 "부모속성"에만 add가 되도록 parentNode를 추가로 입력해주면 된다. (contains는 불리언값으로 설정해주는것으로 true가 되면 if문이 실행되도록 해준다.)
+            targetElement.parentNode.classList.add("door-opened");
+            currentItem = targetElement.parentNode;
+          }
+        }
+
+        stageElement.addEventListener("click", clickHandler);
+      })();
+    </script>
+  </body>
+</html>

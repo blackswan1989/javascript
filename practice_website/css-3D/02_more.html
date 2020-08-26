@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interactive Web</title>
+    <style>
+      .world {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90vw;
+        height: 60vh;
+        background: #fff000;
+        perspective: 500px;
+      }
+      .card {
+        position: relative;
+        width: 100px;
+        height: 150px;
+        margin: 1em;
+        transform: rotateY(0deg);
+        transition: 1s;
+        /* perserve-3d 효과 설정 필요(익스플로러에서는 적용되지 않음) */
+        transform-style: preserve-3d;
+        /* transform-origin: left를 설정해주면 왼쪽 축을 중심으로 움직이게 된다. 따라서 문을 여는것과 같은 효과를 줄 수 있다. 방향은 rotateY(-180deg)로 설정해주면된다. */
+        transform-origin: left;
+      }
+      .card-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5em;
+        font-size: 1.5rem;
+        /* 크롬외에도 사파리, ms등에서도 hidden이 적용되도록 해준다. 주의할 점은  backface-visibility: hidden;을 마지막줄에 써주어야 한다.  */
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        /* 3d화면에서 움직일때 뒷면이 동시에 깜빡거리며 보이지 않도록 숨겨준다. */
+        backface-visibility: hidden;
+      }
+      .card-side-front {
+        z-index: 1;
+        background: white;
+      }
+      .card-side-back {
+        background: red;
+        /* 카드가 움직였을때 back카드의 뒷면이아닌 글씨가있는 앞면이 보이도록 설정 그리고 부모 엘리먼트인 .card에도 transform-style: preserve-3d;를 설정해주어야 한다.*/
+        transform: rotateY(180deg);
+      }
+      .world:hover .card {
+        transform: rotateY(-180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="world">
+      <div class="card">
+        <div class="card-side card-side-front">F</div>
+        <div class="card-side card-side-back">B</div>
+      </div>
+    </div>
+  </body>
+</html>

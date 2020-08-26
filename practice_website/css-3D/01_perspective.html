@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interactive Web</title>
+    <style>
+      /* card를 감싸는 3d 공간 */
+      .world {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        height: 60vh;
+        background: #fff000;
+        /* 3D효과를 위해 perspective 원근감(원근법)을 준다. 숫자가 낮을수록 더 시야에서 더 가까운 효과를 준다는 것을 의미한다. */
+        /* perspective: 400px; */
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 150px;
+        /* rem은 html을 기준으로 하는 사이즈이고 em은 rem을 기준으로 하는 사이즈이다. 따라서 border-radius는 폰트 사이즈의 크기에 따라 비례하게 하려는 의도이다. */
+        border-radius: 0.5em;
+        font-size: 1.5rem;
+        background: red;
+        transform: perspective(500px) rotateY(45deg);
+        /* transform안에 perspective를 주면 전체 배경에서의 원근모드가 아닌 각 카드에 적용되어 균일하게 보이게 할 수 있다. (필요에 따라 사용) */
+        transition: 1s;
+      }
+
+      .card:hover {
+        transform: rotateY(135deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="world">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+  </body>
+</html>

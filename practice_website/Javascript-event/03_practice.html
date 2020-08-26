@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      .menu-btn {
+        background-color: yellow;
+      }
+      img {
+        height: 100px;
+      }
+      /* css에서 pointer-events:none 값을 주면 이벤트에 반응하지 않게 할 수 있다. 다만 해당 none값을 준 하위 엘리먼트까지 영향이 미치게 된다.*/
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <button class="menu-btn">
+        <img src="images/ilbuni_0.png" alt="" class="icon" />
+        <span class="btn-label">일분이 1</span>
+      </button>
+      <button class="menu-btn">
+        <img src="images/ilbuni_1.png" alt="" class="icon" />
+        <span class="btn-label">일분이 2</span>
+      </button>
+      <button class="menu-btn">
+        <img src="images/ilbuni_2.png" alt="" class="icon" />
+        <span class="btn-label">일분이 3</span>
+      </button>
+    </div>
+
+    <script>
+      const menu = document.querySelector(".menu");
+
+      function clickHandler(event) {
+        console.log(event.target);
+      }
+
+      menu.addEventListener("click", clickHandler);
+    </script>
+  </body>
+</html>

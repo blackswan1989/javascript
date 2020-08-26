@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <style>
+      img {
+        max-width: 100%;
+      }
+      .content {
+        /* viewport height */
+        width: 105vh;
+        height: 1000vh;
+        padding: 20%;
+        background: yellowgreen;
+      }
+      .outputY {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 50%;
+        font-size: 2rem;
+        font-weight: 200;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+        padding-left: 5px;
+      }
+      .outputX {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 50%;
+        font-size: 2rem;
+        font-weight: 200;
+        text-align: right;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+        padding-right: 5px;
+      }
+
+      /* 스크롤시 효과를 위한 css 셋팅 */
+      .images {
+        width: 100px;
+        margin: 10px auto;
+        transition: 1s;
+      }
+      .images.zoom {
+        transform: scale(1.5);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="outputY">outputY</div>
+    <div class="outputX">outputX</div>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo culpa id
+        ratione alias illum aliquam accusamus deleniti dolores dignissimos,
+        temporibus iste perspiciatis voluptatem repudiandae debitis similique
+        fugiat dolor, doloremque quos mollitia repellendus iure exercitationem
+        molestiae ab! Veritatis harum voluptate enim ducimus amet vitae veniam
+        dignissimos possimus facilis eaque minus similique, vel commodi sed?
+        Sequi distinctio debitis numquam, necessitatibus officiis quam, sed
+        rerum id culpa totam provident repellendus iste, laborum maiores,
+        consequuntur fugiat voluptatibus? Ad, architecto. Ipsam minus quis, ea
+        quas, ex impedit quia distinctio commodi expedita laudantium dolores
+        cum? Quisquam, odit, laboriosam consequuntur expedita optio laudantium.
+        Optio laboriosam, repellendus laborum.
+      </p>
+      <div class="images">
+      <figure class="images one">
+        <img src="images/ilbuni_0.png" alt="일분이" />
+      </figure>
+      <figure class="images two">
+        <img src="images/ilbuni_1.png" alt="일분이" />
+      </figure>
+      <figure class="images three">
+        <img src="images/ilbuni_2.png" alt="일분이" />
+      </figure>
+      <figure class="images four">
+        <img src="images/ilbuni_3.png" alt="일분이" />
+      </figure>
+    </div>
+
+    <script>
+      (function () {
+        const outputElemnetY = document.querySelector(".outputY");
+        const outputElemnetX = document.querySelector(".outputX");
+        const imgEliment = document.querySelector(".images");
+
+        function showEvent() {
+          //1)outputElemnetY.innerHTML = window.pageYOffset;
+          //위 코드는 스클로 할 때의 y축 위치를 표시해준다.
+          //2)outputElemnetY.innerHTML = imgEliment.offsetTop;
+          //위 방법처럼 offsetTop을 쓰면 이미지의 위치는 표시해주지만 스크롤에따라 y값이 변하는것은 잡을 수 없다.
+
+          /*
+          outputElemnetY.innerHTML = imgEliment.getBoundingClientRect().top;*/
+
+          //3)
+          //현재 img의 y값보다 스크롤이 더 내려갔을때 이벤트가 발생해주도록 아래 코드를 작성하고 if를 설정해준다.
+          let positionY = imgEliment.getBoundingClientRect().top;
+          outputElemnetY.innerHTML = positionY;
+
+          //console.log(window.innerHeight); y값을 알려준다.
+
+          if (positionY < window.innerHeight * 0.2) {
+            imgEliment.classList.add("zoom");
+          } else {
+            imgEliment.classList.remove("zoom");
+          }
+
+          outputElemnetX.innerHTML = imgEliment.getBoundingClientRect().left;
+        }
+
+        window.addEventListener("scroll", function () {
+          //outputElemnetX.innerHTML = window.pageXOffset;
+          showEvent();
+        });
+      })();
+    </script>
+  </body>
+</html>
