@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Interactive Web</title>
+    <style>
+      @keyframes sample-ani {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          background: red;
+          transform: translate(300px, 0);
+        }
+        100% {
+          transform: translate(400px, 500px);
+        }
+      }
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border: 2px solid #000;
+        background: #fff000;
+        animation: sample-ani 2s linear infinite alternate;
+        /* animation에 alternate; 값을 적용해주면 이동했다가 다시 반대로 되돌아오는 효과를 줄 수 있다. reverse와 infinite와 함께 활용 가능하다. */
+      }
+      .box:hover {
+        animation-play-state: paused;
+        /* animation-play-state 디폴트값인 running(자동실행)을 paused로 바꿔주면 멈춰있는 상태로 시작하게 된다. 여기에 hover를 주게되면 마우스를 올렸을때 애니메이션이 멈추게된다. */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Animation</h1>
+    <div class="box">
+      Mouse over
+    </div>
+  </body>
+</html>
