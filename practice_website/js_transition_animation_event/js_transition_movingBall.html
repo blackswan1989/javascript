@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Transition/Animation Event</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .ball {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        margin: -20px 0px 0px -20px;
+        font-size: 2.5rem;
+        border-radius: 50%;
+        background: white;
+        transition: 1s;
+      }
+      .ball.end {
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball">👻</div>
+
+    <script>
+      const ballElement = document.querySelector(".ball");
+
+      window.addEventListener("click", function (event) {
+        ballElement.style.transform =
+          "translate(" + event.clientX + "px," + event.clientY + "px)";
+      });
+
+      // event : transitionend & transitionstart
+      // end는 이벤트가 끝나면 발생하고 stat는 시작할때부터 발생하게 된다.
+      ballElement.addEventListener("transitionend", function () {
+        ballElement.classList.add("end");
+        // console.log(event.elapsedTime);
+        // console.log(event.propertyName);
+      });
+    </script>
+  </body>
+</html>
