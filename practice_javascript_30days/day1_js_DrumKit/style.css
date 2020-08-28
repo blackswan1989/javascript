@@ -34,15 +34,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
+  font-size: 7rem;
   margin-bottom: 200px;
-  color: hotpink;
-  text-shadow: 0 0 0.3rem rgb(255, 166, 236);
+  color: white;
+  text-shadow: 0 0 1rem rgb(255, 166, 236);
 }
 
 .key {
   border: 0.4rem solid hotpink;
-  border-radius: 0.5rem;
+  border-radius: 0.9rem;
   margin: 0.3rem;
   font-size: 1.5rem;
   padding: 1rem 0.5rem;
