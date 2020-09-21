@@ -1,6 +1,5 @@
-//codesandbox.io/s/express-blueprint-forked-yxeb7?file=/routers/courseRouter.js
-
-https: import express from "express";
+//https: codesandbox.io/s/express-blueprint-forked-yxeb7?file=/routers/courseRouter.js
+import express from "express";
 import globalRouter from "../routers/globalRouter";
 import userRouter from "../routers/userRouter";
 import courseRouter from "../routers/courseRouter";
