@@ -3,8 +3,13 @@ header.header
       a(href=routes.home)
         i.fab.fa-youtube.fa-2x
     div.header__column
+      form(action=routes.search, method="get")
+        input(type="text", placeholder="Search by tern...", name="term")
+    div.header__column
       ul
         li
           a(href=routes.join) Join
         li
           a(href=routes.login) Log In
+
+//- form(action=routes.search, method="get") 여기서 get메소드가 url에 정보를 추가시켜준다. 
