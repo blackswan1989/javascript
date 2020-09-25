@@ -1,6 +1,6 @@
 // const express = require("express"); 구문법
 import express from "express"; //ES6문법 express를 불러온다(require로).
-import { localsMiddleware } from "./midddlewares";
+import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";

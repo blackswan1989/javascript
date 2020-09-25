@@ -1,0 +1,10 @@
+extends layouts/main
+include mixins/movieBlock
+
+block content
+  .movieBlock
+      h4=movies.title
+      h6=movies.id
+      h6=movies.genres
+      h6=movies.year
+      h6=movies.rating
