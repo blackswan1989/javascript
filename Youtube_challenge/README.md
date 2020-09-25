@@ -18,3 +18,9 @@
    - "scripts": {
      "start": "nodemon --exec babel-node index.js --delay 2"
      }, 위처럼 수정 ("nodeomon --exec"와 "--delay 2"를 끝에 붙여준다.)
+5. morgan 설치
+   - npm install morgan
+   - app.js에 middleware추가해주기(옵션은"dev"로 설정)
+6. helmet 설치
+   - npm install helmet
+   - app.js에 middleware추가해주기

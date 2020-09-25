@@ -1,0 +1,9 @@
+mixin videoBlock(video={})
+  .videoBlock
+    a(href=routes.videoDetail(video.id))
+      video.videoBlock__tumbnail(src=video.videoFile, controls=true)
+      h4.videoBlock__title=video.title
+      h6.videoBlock__views=video.views
+
+
+//- mixin에는 인자가 하나 필요하다. 따라서 인자의 이름을 video라고 하고, 기본값은 {}로 설정해준다 (기본적으로 빈 객체이다.)

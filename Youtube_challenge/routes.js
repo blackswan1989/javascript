@@ -27,13 +27,26 @@ const routes = {
   search: SEARCH,
   //users
   users: USERS,
-  userDetail: USER_DETAIL,
+  userDetail: (id) => {
+    //이 함수는 id를 인자로 입력받아 만약 id가 있다면 users/id를 리턴해준다.
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL;
+    }
+  },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   //videos
   videos: VIDEOS,
   upload: UPLOAD,
-  videoDetail: VIDEO_DETAIL,
+  videoDetail: (id) => {
+    if (id) {
+      return `/videos/${id}`;
+    } else {
+      return VIDEO_DETAIL;
+    }
+  },
   editVideo: EDIT_VIDEO,
   deletVideo: DELETE_VIDEO,
 };

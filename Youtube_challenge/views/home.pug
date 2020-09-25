@@ -1,5 +1,15 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
     .videos
-        h1 Video
+        each item in videos
+          +videoBlock({
+              id:item.id,
+              title:item.title,
+              views:item.views,
+              videoFile:item.videoFile
+          })
+        
+//- video = 변수명으로 원하는 변수명으로 설정 할 수 있다.
+//- template의 videos는 controller에서 전달한 videos와 이름이 같양 ㅏ한다.

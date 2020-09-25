@@ -13,6 +13,6 @@ userRouter.get("/", users);
 // userRouter.get("/", users); "http://localhost:4000/users" 주소를 만드려면 이렇게.
 userRouter.get(routes.editProfile, editProfile);
 userRouter.get(routes.changePassword, changePassword);
-userRouter.get(routes.userDetail, userDetail);
+userRouter.get(routes.userDetail(), userDetail);
 
 export default userRouter;
