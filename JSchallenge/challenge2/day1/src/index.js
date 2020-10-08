@@ -2,7 +2,6 @@
 //import "./styles.css";
 const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
 const title = document.querySelector("h2");
-// <⚠️ /DONT DELETE THIS ⚠️>
 
 const superEventHandler = {
   mouseEnterHandler: function () {
@@ -36,7 +35,7 @@ window.addEventListener(
 window.addEventListener("resize", superEventHandler.windowResizeHandler);
 title.addEventListener("click", superEventHandler.mouseClickHandler);
 
-/*
+/* 조건
 ✅ The text of the title should change when the mouse is on top of it.
 ✅ The text of the title should change when the mouse is leaves it.
 ✅ When the window is resized the title should change.
