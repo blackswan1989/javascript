@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+:root {
+  --text-color: #f0f4f5;
+  --background-color: rgb(250, 176, 190);
+  --hover-color: rgb(255, 200, 209);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+  color: var(--text-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 8px 12px;
+}
+
+
+/* Left Main Logo */
+
+.navbar__logo {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.navbar__logo i {
+  margin-right: 2px;
+}
+
+
+/* Main Menu Links  */
+
+.navbar__menu {
+  display: flex;
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+  background-color: var(--hover-color);
+  border-radius: 12px;
+}
+
+
+/* Right Icons */
+
+.navbar__icons {
+  display: flex;
+  color: var(--text-color);
+}
+
+.navbar__icons li {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.navbar__togglebtn {
+  display: none;
+  position: absolute;
+  right: 25px;
+  font-size: 18px;
+}
+
+/* For small screen */
+
+@media screen and (max-width: 570px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 20px;
+  }
+
+  .navbar__menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px
+  }
+
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__icons {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .navbar__togglebtn {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
