@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
 
+<body>
+    <script>
+        let sum = 0;
+
+        for (let i = 1; i < 101; i++) { // i = 1부터 5까지 총 5번 반복
+            sum += i; //repeat = repeat + i 를 줄여서 표현
+        }
+        document.write(`1부터 100까지 더하면 ${sum}`);
+
+        // ES6 | for of문 (값을 기준으로 반복한다. 인덱스 값이 필요없을때 사용.)
+        let seasons = ["봄", "여름", "가을", "겨울"];
+        for (let value of seasons) {
+            document.write(`<p>${value}</p>`)
+            console.log(value)
+        }
+    </script>
 </body>
+
 </html>
+
+<!-- 
+    * for()문 실행 순서
+    * 1) "let = i" 선언된 카운터 변수 확인
+    * 2) "i < 12" 조건 체크
+    * 3) {중괄호}안의 소스 실행
+    * 4) "i++" 증감 연산자를 통해 변수 i를 1만큼 증가시켜준다.
+    * 5) 초기화
+
+    "let i" = 1은 카운터 변수를 선언(카운터 변수란 for문을 실행할 때 반복 횟수의 기준이 되는 변수로 반복문을 시작하기 전에 반드시 초기화 되어야 한다. 보통 for문의 반복 실행 횟수만 알아낼 때에는 카운터 변수를 0으로 초기화하지만, 위의 예제에서는 덧셈에 사용하기 위해 1로 초기화 해주었다.)
+
+    "1 < 12"는 for문 안에 있는 소스를 실행할지 판단하는 '조건'이다. true라면 중골화 안의 자바스크립트 소스를 실행하고, false라면 for문을 벗어나 다음 소스를 실행한다.
+
+    "i++"는 증감 연산자를 사용하여 카운터 변수를 조절해주는 것이다. 즉 중괄호의 소스를 실행한 이후 카운터 변수 i를 1반큼 증가++시켜준다.
+ -->
