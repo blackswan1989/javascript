@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,81 @@
 	<title>3의 배수인지 확인</title>
 	<link rel="stylesheet" href="css/multi3.css">
 </head>
+
 <body>
 	<div id="result"></div>
+	<script>
+		const userNumber = prompt("숫자를 입력하세요.");
+		const displayResult = document.querySelector("#result");
+
+		if (userNumber != null) {
+			//값을 입력했을 때 실행할 명령
+			if (userNumber % 3 === 0) {
+				// 3의 배수일 때 실행할 명령
+				displayResult.innerHTML = `${userNumber}은(는) 3의 배수입니다.`
+			} else {
+				// 3의 배수가 아닐 때 실행할 명령
+				displayResult.innerHTML = `${userNumber}은(는) 3의 배수가 아닙니다.`
+			}
+		} else {
+			//[취소]버튼을 눌렀을 때 실행할 명령
+			alert("입력이 취소되었습니다.");
+		}
+	</script>
 </body>
+
 </html>
+
+<!-- 
+	위와 반대로 userNumber == null 조건으로도 사용 가능
+
+	if(userNumber == null) {
+		[취소]버튼을 눌렀을 때 실행할 명령
+	} else {
+		값을 입력했을 때 실행 할 명령
+	}
+ -->
+
+<!--
+* If, else문	
+
+If문에서 조건이 true가 되면 그 다음에 오는 else문은 실행하지 않고 넘어간다.
+이 특징을 활용해서 true가 될 경우가 많은 경우라면 조건을 if 문에 넣고 다른 조건을 else문에서 처리하는 것이 프로그램 실행 시간이 더 짧아진다.
+
+
+* 조건 연산자 사용법
+
+ - ? 왼쪽에 조건을 넣는다.
+ - : 왼쪽에는 true일때 실행할 명령을 넣고
+ - : 오른쪽에는 조건이 false일때 실행할 명령을 넣는다.
+
+Ex) (score >=) ? alert("통과") : alert("실패");
+
+Truthy와 falsy
+논리형 자료값은 true와 false뿐이지만 일반 값 중에서도 true로 인정할 수 있는 값과 flase로 인정할 수 있는 값이 있다. 이 값을 'truthy하다', 'falsy하다'라고 표현한다.
+
+
+* falsy 의 종류
+
+	- 0  (숫자)
+	- ""  (빈 문자열)
+	- NaN  (not a number : 보통 변수를 선언만하고 값을 할당하지 않은 상태에서 연산을 하면 볼 수 있는 값이다.)
+	- Undefined 
+	- Null
+
+	이 외의 값은 true로 인정하는 truthy값이다.
+
+
+* truthy와 falsy로 조건 확인
+
+Ex) const input = prompt("이름을 입력하세요.")
+
+	If (input) {
+		alert("이름을 입력했습니다 : " + input)
+	} else {
+		alert("이름을 입력하지 않았습니다.")
+	}
+	
+	여기서 if (input) 이라는 값을 입력했기 떄문에 truthy가 되고 else에는 값이 들어있지 않기 떄문에 falsy가 된다.
+
+ -->
