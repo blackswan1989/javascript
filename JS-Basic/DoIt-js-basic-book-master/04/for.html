@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,37 @@
 	<title>중첩된 for 문</title>
 	<link rel="stylesheet" href="css/for.css">
 </head>
-<body>
 
+<body>
+	<script>
+		//for문 중첩해서 사용하기.
+		for (let i = 0; i < 30; i++) {
+			document.write("🐣");
+		}
+		document.write("<br>");
+		for (let i = 0; i < 30; i++) {
+			document.write("🐣");
+		}
+		document.write("<br>");
+		for (let i = 0; i < 30; i++) {
+			document.write("🐣");
+		}
+		document.write("<br><br>")
+		//for문을 중첩해서 사용하기 위해 카운터 변수 k를 새로 만들어준다.
+		//그리고 그 for문 안에 위에서 만든 반복 할 내용을 넣는다.
+		for (let k = 0; k < 5; k++) {
+			for (let i = 0; i < 30; i++) {
+				document.write("🐥");
+			}
+			document.write("<br>");
+		}
+		/*
+			1) 바깥쪽 for문을 실행 (k = 0)
+			2) 안쪽의 for문을 실행하여 30번 반복하고 빠져나온다. (i < 30)
+			3) document.write("<br>")태그를 통해 줄을 바꾼다.
+			4) 바깥쪽 for문의 조건식이 false가 될 때까지 반복한다. (k < 5)
+		*/
+	</script>
 </body>
+
 </html>
