@@ -4,12 +4,13 @@
 const num1 = parseInt(prompt("더해줄 첫번째 숫자는?"));
 const num2 = parseInt(prompt("더해줄 두번째 숫자는?"));
 
-function addNumber(a, b) {
+function addNumber(a, b) { //a, b는 매개변수(method)로 지정된다.
   let sum = a + b;
   document.write(`<p>입력한 두개의 수를 더한 값은 "${sum}" 입니다.</p>`)
 }
 
 addNumber(num1, num2);
+
 
 
 //ES6에서는 매개변수가 있는 함수를 선언할 때 매개변수의 기본 값을 지정하는 기능이 생겼다.
