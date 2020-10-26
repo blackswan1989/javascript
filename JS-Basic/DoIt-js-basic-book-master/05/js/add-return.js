@@ -9,6 +9,7 @@ const result = addNumber(num1, num2);
 function addNumber(a, b) {
     let sum = a + b;
     return sum;
+    //위처럼 간단한 식은 return a + b로 작성 가능
 }
 
 alert(`두 수를 더한 값은 ${result} 입니다.`);
