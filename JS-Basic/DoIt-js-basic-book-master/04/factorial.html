@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,20 @@
 	<title>팩토리얼 계산하기</title>
 	<link rel="stylesheet" href="css/factorial.css">
 </head>
-<body>
 
+<body>
+	<script>
+		let n = prompt("곱하고 싶은 숫자를 입력하세요.");
+		let nFact = 1; // 계산 결과값을 저장할 변수("1"을 기본값으로 설정)
+		let i = 2; // 반복문에 사용할 카운터 변수("1!"은 1이기때문에 2부터 시작.)
+
+		while (i <= n) {
+			nFact = nFact * i; // (nFact *= i)
+			i++
+		} // 따라서 5 입력시 계산 = 5*4)*3)*2)*1
+
+		document.write(`${n}! = ${nFact}`);
+	</script>
 </body>
+
 </html>
