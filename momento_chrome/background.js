@@ -27,5 +27,5 @@ function init() {
 init();
 
 /* 이렇게 작성하면 이미지가 출력됨.
-image.src = "/Users/blackswan1989/Documents/javascript/momento_crome/images/1.jpg";
+image.src = "/Users/blackswan1989/Documents/javascript/momento_chrome/images/1.jpg";
 */
