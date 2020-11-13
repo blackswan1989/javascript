@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 
 //2)-1 이미지 갯수 함수선언
-const IMG_NUMBER = 6;
+const IMG_NUMBER = 12;
 
 //2)-2 이미지 링크를 연결하여 출력시키기 위함.
 function paintImage(imgNumber) {
