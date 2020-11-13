@@ -10,8 +10,21 @@ html body {
 body {
   background-color: #4b4b4b;
   color: #e6e6e6;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
+}
+
+.githubIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 25px;
+  color: white;
+  padding: 10px 10px;
+  transition-duration: 0.3s;
+}
+.githubIcon:hover {
+  transform: scale(1.5);
+  transition: all 0.3s ease-in-out;
 }
 
 .bgImage {
@@ -19,12 +32,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  min-width: 1000px;
   height: 100%;
-  min-height: 800px;
   z-index: -1;
   animation: fadeIn 2s linear;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -49,7 +59,7 @@ h1 {
   display: flex;
   font-size: 13rem;
   justify-content: center;
-  margin-top: 180px;
+  margin-top: 150px;
 }
 
 .greetings {
@@ -57,7 +67,7 @@ h1 {
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: in-b20px;
 }
 
 button {
@@ -83,16 +93,19 @@ button {
 
 .js-toDoList {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   font-size: 1.5rem;
   margin-top: 15px;
+  width: 100%;
+  height: 50%;
 }
 
 li {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 input {
