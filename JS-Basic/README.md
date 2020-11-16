@@ -32,3 +32,18 @@ favor immutable data type always for a few reasons :
 - Function, First-class function
 
 https://www.youtube.com/watch?v=OCCpGh4ujb8
+
+---
+
+## JSON (JavaScript Object Notation)
+
+1. Object to JSON
+
+   - stringify(obj)
+   - let json = JSON.stringify(true);
+   - console.log(json); // true
+   - json = JSON.stringify(['apple', 'banana']);
+   - console.log(json) // ["apple", "banana"];
+
+2. JSON to Object
+   - parse(json)
