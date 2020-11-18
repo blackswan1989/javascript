@@ -12,5 +12,5 @@ var add = function (a, b) {
 // 위에서 선언한 익명 함수를 변수 add에 할당하여, add를 함수 이름처럼 사용해서 익명함수를 실행한다.
 
 var sum = add(10, 20);
-
 document.write(sum);
+// 위의 소스는 변수 add를 사용해 익명 함수를 실행하고 그 결과값을 sum에 저장한다.
