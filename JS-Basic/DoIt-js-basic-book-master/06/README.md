@@ -59,7 +59,7 @@ Property를 사용할 때와 마찬가지로 객체의 Method를 사용할 때�
 > window.alert()
 ```
 
-Property : 객체에서 값을 담고 있는 정보
+Property : 객체에서 값을 담고 있는 정보  
 Method : 객체 안에 들어 있는 함수
 
 <br>
@@ -86,6 +86,31 @@ Method : 객체 안에 들어 있는 함수
 ```
 
 now는 이제 Date 객체의 인스턴스이므로, Date 객체에서 정의한 속성과 함수를 모두 사용할 수 있다.
+
+### 6) 내장 객체(Math)로 무작위 수 프로그램 만들기
+
+URL: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+Math.abs(x) 숫자의 절댓값을 반환합니다.
+Math.acos(x) 숫자의 아크코사인 값을 반환합니다.  
+Math.acosh(x) 숫자의 쌍곡아크코사인 값을 반환합니다.  
+Math.ceil(x) 인수보다 크거나 같은 수 중에서 가장 작은 정수를 반환합니다.  
+Math.floor(x) 인수보다 작거나 같은 수 중에서 가장 큰 정수를 반환합니다.  
+Math.random() 0과 1 사이의 난수를 반환합니다.  
+Math.round(x) 숫자에서 가장 가까운 정수를 반환합니다.
+
+```
+> Math.random() // 0과 1사이의 숫자가 출력된다.
+< 0.5892730205129277
+
+> Math.random() * 100 + 1 // 1부터 100까지 무작위 숫자를 출력한다.
+< 97.34896643809864
+
+> Math.floor(Math.random() * 100 + 1) // Math 객체에서 정수인 무작위수를 만들기 위해 소수점 이하를 버리는 함수는 floor()함수이다.
+< 73 // 이처럼 미리 만들어져 있는 객체와 속성 또는 함수로 필요한 기능을 쉽게 가져와 사용할 수 있다.
+```
+
+> Math 객체는 따로 Instance를 생성하지 않는다. 일반적으로 자바스크립트에서 객체의 속성이나 함수를 사용하려면 new 예약어를 통해 객체의 instance를 만든 후 사용했지만 Math객체는 따로 객체의 Instance를 사용하지 않고 property나 method를 사용한다. 그래서 Math.random()처럼 대문자로 시작하는 객체 이름 뒤에 바로 속성이나 함수를 사용하면 된다.
 
 <br>
 
