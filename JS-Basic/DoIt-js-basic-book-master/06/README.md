@@ -96,8 +96,7 @@ now는 이제 Date 객체의 인스턴스이므로, Date 객체에서 정의한 
 URL: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math
 
 Math.abs(x) 숫자의 절댓값을 반환합니다.
-Math.acos(x) 숫자의 아크코사인 값을 반환합니다.  
-Math.acosh(x) 숫자의 쌍곡아크코사인 값을 반환합니다.  
+Math.cbrt(x) 숫자의 세제곱근을 반환합니다.
 Math.ceil(x) 인수보다 크거나 같은 수 중에서 가장 작은 정수를 반환합니다.  
 Math.floor(x) 인수보다 작거나 같은 수 중에서 가장 큰 정수를 반환합니다.  
 Math.random() 0과 1 사이의 난수를 반환합니다.  
