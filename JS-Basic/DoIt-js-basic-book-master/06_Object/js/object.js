@@ -1,5 +1,5 @@
 const toyRobot = {
-  // toyRobot 객체를 선언한 후 속성과 함수 정의
+  // toyRobot 객체를 선언한 후 속성(property)과 함수(method) 정의
   productId: "123-12",
   name: "Robot",
   price: "25,000",
@@ -18,5 +18,5 @@ const toyRobot = {
   },
 };
 
-toyRobot.showStock(); // toyRobot 객체의 showStock() 함수 실행
+toyRobot.showStock(); // toyRobot 객체의 showStock() method 실행
 toyRobot.showPrice();
