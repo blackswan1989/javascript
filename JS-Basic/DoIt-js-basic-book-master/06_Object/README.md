@@ -84,7 +84,7 @@ var book = {
 < "Mon Nov 23 2020"
 ```
 
-now는 이제 Date 객체의 인스턴스이므로, Date 객체에서 정의한 속성과 함수를 모두 사용할 수 있다.
+> now는 이제 Date 객체의 인스턴스이므로, Date 객체에서 정의한 속성과 함수를 모두 사용할 수 있다.
 
 <br>
 
@@ -143,7 +143,30 @@ const book = { // book 객체 선언
 }
 ```
 
-사용자 정의 객체에서도 속성 값을 가져오려면 마침표(.)를 사용해야 한다.
+> 사용자 정의 객체에서도 속성 값을 가져오려면 마침표(.)를 사용해야 한다. 예를 들어 book 객체의 title 속성 값을 알고 싶다면 book.title이라고 하면 된다. 같은 방법으로 book의 info() 함수를 실행할 수도 있다.
+
+```
+> book.title
+< "javascript"
+
+> book.author
+< "Kate"
+
+> book.info()
+< alert: "Javascript 책의 분량은 500쪽 입니다."
+```
+
+프로그램에서 book 객체를 만들어 사용하다가 새로운 속성을 추가할 수 있다. 예를 들어 분야 정보를 추가하고 싶다면 book.field = "IT" 이처럼 field 속성을 입력하여 추가할 수 있다.
+
+```
+> {title: "javascript",
+   author: "Kate",
+   pages: 500,
+   price: 15000,
+   info: ƒ, …}
+   author: "Kate"
+   field: "IT" } // 콘솔에서 field 값이 추가된 것을 확인할 수 있다.
+```
 
 <br>
 <br>
