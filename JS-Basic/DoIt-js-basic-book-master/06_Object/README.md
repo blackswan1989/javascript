@@ -167,3 +167,33 @@ const book = { // book 객체 선언
    author: "Kate"
    field: "IT" } // 콘솔에서 field 값이 추가된 것을 확인할 수 있다.
 ```
+
+<br>
+
+### 2) 생성자 함수를 사용해 객체를 만드는 방법
+
+리터럴 표기법을 사용해 객체를 만드는 방법은 정해진 값을 가진 객체를 한번만 만들어낸다는 단점이 있다. 항상 필요한 속성과 함수는 틀처럼 미리 만들어두고, 필요할 때마다 그 틀을 복제한 인스턴스를 만들어 책 정보를 담는 것이 편리하다. 이때 생성자 함수를 사용해 객체를 만든다.
+
+```
+function Book(author, pages, price, title) {
+   this.authot = author;
+   this.pages = pages;
+   this.price = price;
+   this.title = title;
+}
+```
+
+> 생성자 함수 또한 함수이므로 function 예약어를 사용해 선언한다. <br>
+> 생성자 함수 안에 객체의 속성과 함수를 정의할 때에는 this 예약어 다음에 마침표와 속성 이름을 입력한다. <br>
+> 여기서 this가 가리키는 것은 선언하고 있는 객체 자체(Book)이다. <br>
+> 객체의 속성은 객체에서 사용하는 변수이고 객체의 함수는 해당 객체에서 사용하는 함수라고 생각하면 된다. <br>
+
+```
+> jsBook = new Book("kate", 500, 15000, "Javascript") // Book 객체의 instance만들기
+< Book {author: "kate", pages: 500, price: 15000, title: "Javascript"}
+
+> jsBook.title // jsBook 객체에서 속성 값 확인하기
+< "Javascript"
+```
+
+> Book 객체를 만들었다면 위처럼 new 예약어 뒤에 Book 객체를 사용하여 jsBook이라는 Instance를 만들 수 있다.
