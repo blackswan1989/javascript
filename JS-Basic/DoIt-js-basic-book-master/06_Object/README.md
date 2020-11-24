@@ -156,7 +156,7 @@ const book = { // book 객체 선언
 < alert: "Javascript 책의 분량은 500쪽 입니다."
 ```
 
-프로그램에서 book 객체를 만들어 사용하다가 새로운 속성을 추가할 수 있다. 예를 들어 분야 정보를 추가하고 싶다면 book.field = "IT" 이처럼 field 속성을 입력하여 추가할 수 있다.
+> 프로그램에서 book 객체를 만들어 사용하다가 새로운 속성을 추가할 수 있다. 예를 들어 분야 정보를 추가하고 싶다면 book.field = "IT" 이처럼 field 속성을 입력하여 추가할 수 있다.
 
 ```
 > {title: "javascript",
@@ -167,8 +167,3 @@ const book = { // book 객체 선언
    author: "Kate"
    field: "IT" } // 콘솔에서 field 값이 추가된 것을 확인할 수 있다.
 ```
-
-<br>
-<br>
-
-## 6-3 Data 객체를 활용해 기념일 계산기 만들기
