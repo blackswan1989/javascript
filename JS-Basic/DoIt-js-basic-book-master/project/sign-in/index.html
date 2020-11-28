@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main__container">
+      <form action="index.html" class="form__register" name="form">
+        <h1>회원 가입</h1>
+        <label for="userName" class="form__label">
+          이름
+          <div class="form__name">
+            <input
+              type="text"
+              id="userName"
+              class="form__input"
+              placeholder="이름을 입력하세요"
+              required
+            />
+          </div>
+          <div class="message"></div>
+        </label>
+        <label for="userId" class="form__label">
+          아이디
+          <div class="form__id">
+            <input
+              type="text"
+              id="userId"
+              class="form__input"
+              placeholder="아이디를 입력하세요"
+              required
+            />
+          </div>
+        </label>
+        <label for="userPassword" class="form__label">
+          비밀번호
+          <div class="form__password">
+            <input
+              type="password"
+              id="userPassword"
+              class="form__input"
+              placeholder="비밀번호를 입력하세요"
+              required
+            />
+          </div>
+        </label>
+        <label for="userPassword2" class="form__label">
+          비밀번호 확인
+          <div class="form__password2">
+            <input
+              type="password"
+              id="userPassword2"
+              class="form__input"
+              placeholder="비밀번호를 한번 더 입력하세요"
+              required
+            />
+          </div>
+        </label>
+        <label for="userBirth" class="form__label">
+          생년월일
+          <div class="form__birth">
+            <input type="date" id="userBirth" class="form__input" required />
+          </div>
+        </label>
+        <div class="gender-box">
+          <span>성별</span>
+          <label for="userGender--man" class="gender-box__label">
+            <div class="gender">남자</div>
+            <input
+              type="radio"
+              id="userGender--man"
+              class="radio__input"
+              name="userGender"
+              value="Man"
+              checked
+            />
+          </label>
+          <label for="userGender--woman" class="gender-box__label">
+            <div class="gender">여자</div>
+            <input
+              type="radio"
+              id="userGender--woman"
+              class="radio__input"
+              name="userGender"
+              value="Woman"
+            />
+          </label>
+        </div>
+        <label for="agree" class="agree--label">
+          약관 전체 동의
+          <input
+            type="checkbox"
+            name="agree"
+            id="agree"
+            class="agree__input"
+            required
+          />
+        </label>
+        <label for="submit" class="submit--label">
+          <input type="submit" name="submit" class="submit__input" />
+        </label>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+.main__container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  color: white;
+  background-color: gray;
+  padding: 20px 20px;
+}
+
+.form__register {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form__label {
+  padding: 10px 10px;
+  width: 500px;
+}
+
+.form__label > div {
+  margin-top: 10px;
+}
+
+input {
+  outline: none;
+  border: 1px solid white;
+  background: none;
+  color: white;
+  width: 300px;
+  height: 35px;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 0.2;
+}
+
+.form__input {
+  margin: 0px 10px;
+}
+
+.gender-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 10px;
+}
+
+.gender-box__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.radio__input {
+  margin-right: 20px;
+  width: 20px;
+}
+.agree--label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+  margin-left: 195px;
+}
+.agree__input {
+  width: 20px;
+  height: 18px;
+}
+
+.submit__input {
+  width: 100px;
+  margin-top: 50px;
+  margin-left: 225px;
+}
