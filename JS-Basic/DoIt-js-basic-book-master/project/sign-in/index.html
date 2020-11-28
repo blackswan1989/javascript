@@ -9,7 +9,7 @@
   <body>
     <h2 class="title">회원 가입</h2>
     <main class="main__container">
-      <form class="form__register">
+      <form class="form__register" onsubmit="return false">
         <label for="userName" class="form__label">
           이름
           <div class="form__name">
@@ -36,6 +36,7 @@
               placeholder="아이디를 입력하세요"
               required
             />
+            <input type="hidden" name="hidden" />
           </div>
           <div class="error messageId"></div>
         </label>
@@ -49,6 +50,7 @@
               placeholder="비밀번호를 입력하세요"
               required
             />
+            <input type="hidden" name="hidden" />
           </div>
           <div class="error messagePassword1"></div>
         </label>
@@ -62,6 +64,7 @@
               placeholder="비밀번호를 한번 더 입력하세요"
               required
             />
+            <input type="hidden" name="hidden" />
           </div>
           <div class="error messagePassword2"></div>
         </label>
@@ -75,6 +78,7 @@
               max="2020-12-31"
               required
             />
+            <input type="hidden" name="hidden" />
           </div>
         </label>
         <div class="error messageBirth"></div>
@@ -90,6 +94,7 @@
               value="Man"
               checked
             />
+            <input type="hidden" name="hidden" />
           </label>
           <label for="userGenderWoman" class="gender-box__label">
             <div class="gender">여자</div>
@@ -100,12 +105,14 @@
               name="userGender"
               value="Woman"
             />
+            <input type="hidden" name="hidden" />
           </label>
         </div>
         <div class="error messageGender">🚹 '남자'가 선택되어있습니다.</div>
         <label for="agree" class="agree--label">
           약관 전체 동의
           <input type="checkbox" name="agree" id="agree" class="agree__input" />
+          <input type="hidden" name="hidden" />
         </label>
         <div class="error messageCheckBox"></div>
         <input
@@ -114,6 +121,7 @@
           class="submit__input"
           value="가입하기"
         />
+        <input type="hidden" name="hidden" />
       </form>
     </main>
     <script src="script.js"></script>
