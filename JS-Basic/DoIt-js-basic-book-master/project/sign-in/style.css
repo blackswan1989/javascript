@@ -7,7 +7,6 @@ body {
 .main__container {
   display: flex;
   justify-content: flex-start;
-  width: 100%;
   color: white;
   padding: 20px 20px;
 }
@@ -20,11 +19,15 @@ body {
 
 .form__label {
   padding: 10px 10px;
-  width: 500px;
 }
 
 .form__label > div {
   margin-top: 10px;
+}
+
+.error {
+  margin-left: 20px;
+  color: rgb(255, 255, 129);
 }
 
 input {
@@ -51,6 +54,7 @@ input::placeholder {
   width: 160px;
   padding: 0px 10px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .gender-box {
@@ -65,11 +69,13 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   margin-left: 75px;
+  cursor: pointer;
 }
 
 .radio__input {
   width: 20px;
   margin: 10px 10px;
+  cursor: pointer;
 }
 
 .agree--label {
@@ -78,14 +84,17 @@ input::placeholder {
   justify-content: center;
   margin: 20px 0px;
   margin-left: 195px;
+  cursor: pointer;
 }
 .agree__input {
   width: 20px;
   height: 18px;
+  cursor: pointer;
 }
 
 .submit__input {
   width: 100px;
   margin-top: 50px;
   margin-left: 225px;
+  cursor: pointer;
 }
