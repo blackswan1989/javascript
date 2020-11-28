@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="main__container">
-      <form action="index.html" class="form__register" name="form">
+      <form action="#" class="form__register" name="form">
         <h1>회원 가입</h1>
         <label for="userName" class="form__label">
           이름
@@ -16,12 +16,14 @@
             <input
               type="text"
               id="userName"
-              class="form__input"
+              class="form__input input__name"
               placeholder="이름을 입력하세요"
               required
+              minlength="3"
+              maxlength="20"
             />
           </div>
-          <div class="message"></div>
+          <div class="error messageName"></div>
         </label>
         <label for="userId" class="form__label">
           아이디
@@ -104,5 +106,6 @@
         </label>
       </form>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
