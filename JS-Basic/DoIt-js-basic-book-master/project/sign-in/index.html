@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h2 class="title">회원 가입</h2>
     <main class="main__container">
-      <form action="#" class="form__register" name="form">
-        <h1>회원 가입</h1>
+      <form class="form__register">
         <label for="userName" class="form__label">
           이름
           <div class="form__name">
@@ -18,10 +18,11 @@
               id="userName"
               class="form__input input__name"
               placeholder="이름을 입력하세요"
-              required
               minlength="3"
               maxlength="20"
+              required
             />
+            <input type="hidden" name="hidden" />
           </div>
           <div class="error messageName"></div>
         </label>
@@ -67,47 +68,52 @@
         <label for="userBirth" class="form__label">
           생년월일
           <div class="form__birth">
-            <input type="date" id="userBirth" class="form__input" required />
+            <input
+              type="date"
+              id="userBirth"
+              class="form__input"
+              max="2020-12-31"
+              required
+            />
           </div>
         </label>
+        <div class="error messageBirth"></div>
         <div class="gender-box">
           <span>성별</span>
-          <label for="userGender--man" class="gender-box__label">
+          <label for="userGenderMan" class="gender-box__label">
             <div class="gender">남자</div>
             <input
               type="radio"
-              id="userGender--man"
+              id="userGenderMan"
               class="radio__input"
               name="userGender"
               value="Man"
               checked
             />
           </label>
-          <label for="userGender--woman" class="gender-box__label">
+          <label for="userGenderWoman" class="gender-box__label">
             <div class="gender">여자</div>
             <input
               type="radio"
-              id="userGender--woman"
+              id="userGenderWoman"
               class="radio__input"
               name="userGender"
               value="Woman"
             />
           </label>
         </div>
+        <div class="error messageGender">🚹 '남자'가 선택되어있습니다.</div>
         <label for="agree" class="agree--label">
           약관 전체 동의
-          <input
-            type="checkbox"
-            name="agree"
-            id="agree"
-            class="agree__input"
-            required
-          />
+          <input type="checkbox" name="agree" id="agree" class="agree__input" />
         </label>
         <div class="error messageCheckBox"></div>
-        <label for="submit" class="submit--label">
-          <input type="submit" name="submit" class="submit__input" />
-        </label>
+        <input
+          type="submit"
+          name="submit"
+          class="submit__input"
+          value="가입하기"
+        />
       </form>
     </main>
     <script src="script.js"></script>
