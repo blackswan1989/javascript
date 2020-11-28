@@ -2,18 +2,28 @@ body {
   background-color: gray;
   padding: 20px 20px;
   font-size: 18px;
+  color: white;
+}
+
+.title {
+  margin-right: 50px;
+  border-bottom: 1px solid white;
 }
 
 .main__container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding: 20px 20px;
+  margin: auto;
+  width: 100%;
+  padding: 30px 0px;
 }
 
 .form__register {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
@@ -25,20 +35,10 @@ body {
   margin-top: 10px;
 }
 
-.error {
-  margin-left: 12px;
-  color: rgb(255, 255, 129);
-  font-size: 15px;
-}
-
-.messageCheckBox {
-  margin-left: 193px;
-}
-
 input {
   outline: none;
   border: 1px solid white;
-  background: none;
+  background: gray;
   color: white;
   width: 300px;
   height: 35px;
@@ -46,13 +46,27 @@ input {
 
 input::placeholder {
   color: white;
-  opacity: 0.2;
+  opacity: 0.4;
   padding: 0px 5px;
   font-size: 14px;
 }
 
+input:valid {
+  border-color: lightgreen;
+}
+
+input:invalid {
+  border-color: red;
+}
+
 .form__input {
   margin: 0px 10px;
+}
+
+.error {
+  margin-left: 12px;
+  color: lightgreen;
+  font-size: 15px;
 }
 
 #userBirth {
@@ -60,6 +74,10 @@ input::placeholder {
   padding: 0px 10px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.error.messageBirth {
+  margin-left: 20px;
 }
 
 .gender-box {
@@ -83,6 +101,12 @@ input::placeholder {
   cursor: pointer;
 }
 
+.messageGender {
+  font-size: 15px;
+  color: lightgreen;
+  margin: -10px 0px 20px 160px;
+}
+
 .agree--label {
   display: flex;
   align-items: center;
@@ -98,9 +122,13 @@ input::placeholder {
   cursor: pointer;
 }
 
+.messageCheckBox {
+  margin-left: 160px;
+}
+
 .submit__input {
   width: 100px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 225px;
   cursor: pointer;
 }
