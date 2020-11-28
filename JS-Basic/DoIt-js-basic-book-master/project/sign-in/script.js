@@ -38,6 +38,8 @@ const form = function () {
       "이름에 특수문자는 사용할 수 없습니다.";
     document.querySelector("#userName").focus();
     return;
+  } else {
+    document.querySelector(".messageName").innerHTML = "";
   }
 };
 
