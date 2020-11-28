@@ -26,8 +26,13 @@ body {
 }
 
 .error {
-  margin-left: 20px;
+  margin-left: 12px;
   color: rgb(255, 255, 129);
+  font-size: 15px;
+}
+
+.messageCheckBox {
+  margin-left: 193px;
 }
 
 input {
@@ -86,6 +91,7 @@ input::placeholder {
   margin-left: 195px;
   cursor: pointer;
 }
+
 .agree__input {
   width: 20px;
   height: 18px;
