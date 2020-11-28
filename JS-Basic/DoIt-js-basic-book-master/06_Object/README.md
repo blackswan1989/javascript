@@ -176,7 +176,7 @@ const book = { // book 객체 선언
 
 ```
 function Book(author, pages, price, title) {
-   this.authot = author;
+   this.author = author;
    this.pages = pages;
    this.price = price;
    this.title = title;
