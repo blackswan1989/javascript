@@ -1,5 +1,9 @@
 "use strict";
 
+$(document).ready(function () {
+  //window.alert("jquery ready");
+});
+
 const submit = document.querySelector(".submit__input");
 const agreeCheckBox = document.querySelector("#agree");
 
@@ -18,7 +22,7 @@ const form = function () {
     if (userName == null || userName == "") {
       messageName.innerHTML = "이름을 입력해주세요.";
       userNameFucus.focus();
-      return false;
+      return false; // false 값을 리턴해서 submit되지 않도록 ( true & false로 모든 제어 필요 )
     } else if (userName.search(/\s/) != -1) {
       messageName.innerHTML = "이름은 빈칸을 포함할 수 없습니다.";
       userNameFucus.focus();
@@ -33,7 +37,7 @@ const form = function () {
       return false;
     } else {
       messageName.innerHTML = "";
-      return true;
+      return true; // true 값을 리턴해서 submit되도록
     }
   };
 
@@ -67,15 +71,22 @@ const form = function () {
     if (userPassword == null || userPassword == "") {
       messagePassword1.innerHTML = "비밀번호를 입력해주세요.";
       userPasswordFocus.focus();
+      userPasswordFocus.classList.add("input_error");
+      return false;
     } else if (userPassword.search(/\s/) != -1) {
       messagePassword1.innerHTML = "비밀번호는 빈칸을 포함할 수 없습니다.";
       userPasswordFocus.focus();
+      userPasswordFocus.classList.add("input_error");
+      return false;
     } else if (userPassword.length < 6 || userPassword.length > 20) {
       messagePassword1.innerHTML =
         "비밀번호는 6글자 이상 20글자 이하로 작성해주세요.";
       userPasswordFocus.focus();
+      userPasswordFocus.classList.add("input_error");
+      return false;
     } else {
       messagePassword1.innerHTML = "";
+      userPasswordFocus.classList.remove("input_error");
       return true;
     }
   };
@@ -84,9 +95,11 @@ const form = function () {
     if (userPasswordConfirm == null || userPasswordConfirm == "") {
       messagePassword2.innerHTML = "비밀번호를 입력해주세요.";
       userPasswordFocus2.focus();
+      return false;
     } else if (userPasswordConfirm.search(/\s/) != -1) {
       messagePassword2.innerHTML = "비밀번호는 빈칸을 포함할 수 없습니다.";
       userPasswordFocus2.focus();
+      return false;
     } else if (
       userPasswordConfirm.length < 6 ||
       userPasswordConfirm.length > 20
@@ -94,6 +107,7 @@ const form = function () {
       messagePassword2.innerHTML =
         "비밀번호는 6글자 이상 20글자 이하로 작성해주세요.";
       userPasswordFocus2.focus();
+      return false;
     } else if (userPassword !== userPasswordConfirm) {
       messagePassword1.innerHTML = "비밀번호가 서로 일치하지 않습니다.";
       userPasswordFocus.value = "";
@@ -145,6 +159,7 @@ agreeCheckBox.addEventListener("click", () => {
   if (agreeCheckBox.checked) {
     document.querySelector(".messageCheckBox").innerHTML =
       "✅ 모든 약관에 동의하였습니다.";
+    return false;
   } else {
     document.querySelector(".messageCheckBox").innerHTML =
       "⛔️ 전체 약관에 동의해주세요.";
@@ -160,6 +175,7 @@ const genderCheck = function () {
     if (genderMan.checked) {
       document.querySelector(".messageGender").innerHTML =
         "🚹 '남자'를 선택하였습니다.";
+      return false;
     }
   });
 
@@ -167,14 +183,13 @@ const genderCheck = function () {
     if (genderWoman.checked) {
       document.querySelector(".messageGender").innerHTML =
         "🚺 '여자'를 선택하였습니다.";
+      return false;
     }
   });
 };
 genderCheck();
 
 submit.addEventListener("click", form);
-
-//모두 유효한지 확인하고 submit 되게 하는 방법을 모르겠다 ㅠ.ㅠ
 
 //NOTE 참조한 사이트
 //유효성 검사 | https://grace-go.tistory.com/66
