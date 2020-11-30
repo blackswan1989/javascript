@@ -37,7 +37,7 @@ body {
 
 input {
   outline: none;
-  border: 1px solid white;
+  border: 2px solid white;
   background: gray;
   color: white;
   width: 300px;
@@ -131,4 +131,8 @@ input:invalid {
   margin-top: 20px;
   margin-left: 225px;
   cursor: pointer;
+}
+
+.input_error {
+  border: 1px red solid !important;
 }
