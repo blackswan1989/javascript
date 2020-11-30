@@ -1,3 +1,5 @@
+<!-- required, valid등은 HTML5에서만 사용 가능하므로 웬만하면 js에서 제어되도록 코드 작성 필요 -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +11,7 @@
   <body>
     <h2 class="title">회원 가입</h2>
     <main class="main__container">
-      <form class="form__register" onsubmit="return false">
+      <form class="form__register" onsubmit="return form()">
         <label for="userName" class="form__label">
           이름
           <div class="form__name">
@@ -20,7 +22,6 @@
               placeholder="이름을 입력하세요"
               minlength="3"
               maxlength="20"
-              required
             />
             <input type="hidden" name="hidden" />
           </div>
@@ -124,6 +125,7 @@
         <input type="hidden" name="hidden" />
       </form>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
