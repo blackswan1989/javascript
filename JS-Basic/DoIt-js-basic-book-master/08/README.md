@@ -462,3 +462,177 @@ myRect.addEventListener("mouseout", function () {
     > newP.setAttributeNode(addId)
     > <p class="accent" id="doit_js">주문이 완료되었습니다.</p>
     > ```
+
+<br>
+<br>
+
+## 08-6 추가한 노드 순서 바꾸거나 삭제하기(p. 275 )
+
+### 1) 여러 노드를 한 번에 저장하는 NodeList
+
+```
+*html 예제*
+
+<div id="container">
+    <h1>참석자 명단</h1>
+    <div id="nameList">
+      <p>홍길동 <span class="del">X</span></p>
+      <p>백두산 <span class="del">X</span></p>
+      <p>도레미 <span class="del">X</span></p>
+    </div>
+</div>
+
+
+* console box *
+
+> document.querySelectorAll("p")
+< NodeList(3) [p, p, p]
+  0: p
+  1: p
+  2: p
+  length: 3
+  __proto__: NodeList
+
+> document.querySelectorAll("p")[0]
+< <p>
+    "홍길동"
+    <span class="del">X</span>
+  </p>
+```
+
+querySelectorAll() 함수를 사용해서 여러 개의 노드를 한 번에 가져오면 3개의 p노드가 한꺼번에 저장되는데,  
+이것을 'NodeList'라고 한다. 배열 형식에 여러 값을 저장하듯 여러 노드가 하나의 변수에 저장된 것을 가리킨다.
+
+콘솔 박스에서 해당 html을 확인해보면 3개의 p노드가 배열 형식처럼 들어가있디.  
+그리고 인덱스와 함께 값이 저장되고 length 속성을 사용해 몇 개의 노드가 저장되었는지 표시된다.  
+배열은 아니지만 배열과 아주 비슷한 형태임을 알 수 있다.
+
+NodeList에서 특정 위치의 노드에 접근할 때는 인덱스를 사용한다.  
+예를 들어 p노드를 저장한 NodeList중에 첫번째 노드를 가져오고 싶다면 위의 소스처럼  
+document.querySelectorAll("p")[0]에서 "[0]"을 추가로 입력하면 첫번째 노드가 출력된다.
+
+<br>
+
+### 2) DOM TREE를 활용해 원하는 노드 다루기
+
+- 자식노드 확인하기 - hasChildNodes()함수
+
+  hasChildNodes()함수는 특정 노드에 자식 노드가 있는지를 확인한다.  
+  자식노드가 있다면 true를 반환하고, 그렇지 않다면 false를 반환한다.
+
+  ```
+  > document.querySelectorAll("p")[0].hasChildNodes()
+  < true
+  ```
+
+  결과가 true로 출력되었다는 것은 첫 번째 p노드에는 자식 노드가 있다는 것을 의미한다.
+
+<br>
+
+- 자식노드에 접근하기 - childNodes 속성
+
+  자식노드가 존재하면 childNodes 속성을 사용해 현재 노드의 자식 노드에 접근할 수 있다.  
+  이때 element node 뿐만 아니라 태그와 태그 사이의 줄 바꿈도 빈 텍스트 노드인 자식 노드로 인식한다.
+
+  ```
+  *html 예제*
+
+  <div id="container">
+      <h1>참석자 명단</h1>
+      <div id="nameList">
+        <p>홍길동 <span class="del">X</span></p>
+        <p>백두산 <span class="del">X</span></p>
+        <p>도레미 <span class="del">X</span></p>
+      </div>
+  </div>
+
+  > document.querySelector("#nameList").childNodes
+  < NodeList(7) [text, p, text, p, text, p, text]
+    0: text
+    1: p
+    2: text
+    3: p
+    4: text
+    5: p
+    6: text
+    length: 7
+    __proto__: NodeList
+  ```
+
+  #nameList element의 자식 노드가 표시되는데 모두 7개의 노드가 있다. 이것은 div태그 다음의 줄 바꿈,  
+  p 태그 사이의 줄 바꿈, 그리고 </div>태그 앞의 줄 바꿈을 빈 텍스트 노드로 인식하기 때문이다.
+
+<br>
+
+- element에만 접근하려면 - children 속성을 사용
+
+  만약 자식 노드 중에서 텍스트 노드와 주석 노드는 필요하지 않고 element노드에만 접근한다면 children속성을 사용하면 된다.
+
+  ```
+  > document.querySelector("#nameList").children
+  < HTMLCollection(3) [p, p, p]
+    0: p
+    1: p
+    2: p
+    length: 3
+    __proto__: HTMLCollection
+  ```
+
+<br>
+
+- 원하는 위치에 노드 삽입하기 - insertBefore() 함수
+
+  자식 노드를 추가하는 appendChild() 함수는 부모 노드에 자식 노드가 있을 경우 마지막 자식 노드로 추가된다.  
+  하지만 insertBefore() 함수를 사용하면 부모 노드에 자식 노드를 추가할 때 기준이 되는 노드를 지정하고 그 앞에 자식 노드를 추가할 수 있다.
+
+  insertBefore() 함수에서는 2개의 인수를 사용하는데  
+  첫 번째 인수는 추가하는 노드, 두 번째 인수는 기준이 되는 노드이다.
+
+  ```
+  > nameList.insertBefore(nameList.children[2], nameList.children[0])
+  < <p>도레미 <span class="del">X</span></p>
+
+  // 출력화면과 Elements에서 확인해보면 0번째 노드'홍길동'과 2번째 노드인 '도레미'의 위치가 바뀐것을 확인할 수 있다.
+  < <p>도레미 <span class="del">X</span></p>
+    <p>백두산 <span class="del">X</span></p>
+    <p>홍길동 <span class="del">X</span></p>
+  ```
+
+<br>
+
+- 특정 노드 삭제하기 - removeChild()함수와 parentNode 속성
+
+  DOM TREE에 있는 노드를 삭제할 때 removeChild()함수를 사용한다.  
+  함수 이름에서 알 수 있듯이 부모 노드에서 자식 노드를 삭제하는 함수이고, 괄호 안에는 삭제하려는 자식 노드가 들어간다.
+
+  노드는 스스로 자식을 삭제할 수 없기 때문에 부모 노드에 접근한 후 부모 노드에서 삭제해야 한다.  
+  그래서 특정 노드를 삭제하려면 그 노드의 부모 노드를 먼저 찾아야 한다.  
+  그 정보를 가지고 있는 속성이 parentNode 속성이다. parentNode 속성은 현재 노드의 부모 element노드를 반환한다.
+
+  ```
+  *html 예제*
+
+  <div id="container">
+    <h1>참석자 명단</h1>
+    <div id="nameList">
+      <p>홍길동 <span class="del">X</span></p>
+      <p>백두산 <span class="del">X</span></p>
+      <p>도레미 <span class="del">X</span></p>
+    </div>
+  </div>
+
+
+  // del클래스를 가진 첫번째 노드의 부모노드는 p태그 홍길동임을 알 수 있다.
+  > document.querySelectorAll(".del")[0].parentNode
+  < <p>홍길동 <span class="del">X</span></p>
+
+  // 첫번째 p태그 홍길동의 부모노드는 #nameList임을 알 수 있다.
+  > document.querySelectorAll("p")[0].parentNode
+  <  <div id="nameList">...</div>
+
+  // 따라서 del클래스를 가진 첫 번째 element를 삭제하려면 첫 번째의 p element에서 removeChild()함수를 실행해야한다.
+  > const firstDel = document.querySelectorAll(".del")[0] // 첫 번째 del클래스를 가진 span 선언
+  > const firstP = document.querySelectorAll("p")[0] // 첫 번째 p element 선언
+  > firstP.removeChild(firstDel) // firstP에 있는 firstDel 삭제
+  < <span class="del">X</span> // 삭제된 노드 반환
+  ```
