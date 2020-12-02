@@ -19,9 +19,11 @@ html이나 css로 일일히 수정하고 제어하는 것보다 Javascript의 DO
 
 ### 2) DOM트리 - 나무처럼 생긴 DOM구조
 
-![html-dom-tree](https://user-images.githubusercontent.com/67410919/100819176-f5df8900-348e-11eb-86f8-dc3a46a15bbf.png)
+아래 그림에서 HTML노드는 Element Node이면서 다른 Element Node가 뻗어 나가기 시작하는 노드이기도 하다.  
+이를 루트 노드(Root Node)라고 부른다. 그리고 특정 노드를 기준으로 위에 붙어 있는 노드를 부모노드, 아래에 있는 노드는 자식 노드라고 부른다.  
+예를 들어 head 노드의 부모는 html노드이고 자식노드는 title노드 이다.
 
-> 위 그림에서 HTML노드는 Element Node이면서 다른 Element Node가 뻗어 나가기 시작하는 노드이기도 하다. 이를 루트 노드(Root Node)라고 부른다. 그리고 특정 노드를 기준으로 위에 붙어 있는 노드를 부모노드, 아래에 있는 노드는 자식 노드라고 부른다. 예를 들어 head 노드의 부모는 html노드이고 자식노드는 title노드 이다.
+![html-dom-tree](https://user-images.githubusercontent.com/67410919/100819176-f5df8900-348e-11eb-86f8-dc3a46a15bbf.png)
 
 DOM은 웹 문서의 요소를 부모 요소와 자식 요소로 구분한다.  
 이 구조가 마치 나무를 거꾸로 뒤집어 놓은 것 같기 때문에 이것을 DOM트리(Tree)라고 부른다.  
@@ -56,6 +58,8 @@ DOM트리는 웹 문서의 HTML요소만 표현하지 않고 HTML의 요소가 �
   // 작성시 클릭하면 h1의 글자 크기가 5rem으로 커지는 것을 확인할 수 있다.
   ```
 
+  <br>
+
 - #### 2) DOM Element를 class 값으로 찾아내는 함수 - getElementsByClassName()
 
   getElementsByClassName()는 복수형인 함수명으로 알 수 있듯 2개 이상의 웹 Element에 접근한다.
@@ -80,6 +84,8 @@ DOM트리는 웹 문서의 HTML요소만 표현하지 않고 HTML의 요소가 �
   < "underline"
   ```
 
+  <br>
+
 - #### 3) DOM Element를 Tag이름으로 찾아내는 함수 - getElementsByTagName()
 
   id나 class 선택자가 없는 DOM Element에 접근할 때 사용한다. 이 함수의 이름도 복수형인 것처럼 여러 DOM Element를 모두 찾아 접근한다.
@@ -99,6 +105,8 @@ DOM트리는 웹 문서의 HTML요소만 표현하지 않고 HTML의 요소가 �
   > document.getElementsByTagName("h2")[0].style.backgroundColor = "#eee"
   <  "#eee"
   ```
+
+    <br>
 
 - #### 4) DOM Element를 다양한 방법으로 찾아주는 함수 - querySelector(), querySelectorAll()
 
@@ -159,20 +167,20 @@ getElementById() 함수들의 이름에서 Element가 들어가있는 것에서�
 
 ```
 * html *
-      <div id="prod-pic">
-        <img
-          src="images/coffee-pink.jpg"
-          alt="에디오피아 게뎁"
-          id="cup"
-          width="200"
-          height="200"
-        />
-        <div id="small-pic">
-          <img src="images/coffee-pink.jpg" class="small" />
-          <img src="images/coffee-blue.jpg" class="small" />
-          <img src="images/coffee-gray.jpg" class="small" />
-        </div>
-      </div>
+<div id="prod-pic">
+  <img
+    src="images/coffee-pink.jpg"
+    alt="에디오피아 게뎁"
+    id="cup"
+    width="200"
+    height="200"
+  />
+  <div id="small-pic">
+    <img src="images/coffee-pink.jpg" class="small" />
+    <img src="images/coffee-blue.jpg" class="small" />
+    <img src="images/coffee-gray.jpg" class="small" />
+  </div>
+</div>
 
 
 * js *
@@ -210,9 +218,9 @@ for(i=0; i<smallImg.length; i++) {
 ```
 * html *
 
-	<div id="container">
-		<img id="pic" src="images/girl.png" alt="">
-	</div>
+<div id="container">
+  <img id="pic" src="images/girl.png" alt="">
+</div>
 
 
 * js*
@@ -254,20 +262,20 @@ document.addEventListener("click", function () {
 
 <!DOCTYPE html>
 <head>
-	<style>
-		#container {
-			width:600px;
-			margin:50px auto;
-			text-align: center;
-		}
-		#rect {
-			width:100px;
-			height:100px;
-			border:1px solid #222;
-			margin:30px auto;
-			transition: 1s;
-		}
-	</style>
+<style>
+#container {
+  width:600px;
+  margin:50px auto;
+  text-align: center;
+}
+#rect {
+  width:100px;
+  height:100px;
+  border:1px solid #222;
+  margin:30px auto;
+  transition: 1s;
+}
+</style>
 </head>
   <body>
     <div id="container">
@@ -301,26 +309,26 @@ myRect.addEventListener("mouseout", function () {
 ```
 * html *
 
-  <div id="detail">
-    <h2>상품 상세 정보</h2>
-    <ul>
-      <li>원산지 : 에디오피아</li>
-      <li>지 역 : 이르가체프 코체레</li>
-      <li>농 장 : 게뎁</li>
-      <li>고 도 : 1,950 ~ 2,000 m</li>
-      <li>품 종 : 지역 토착종</li>
-      <li>가공법 : 워시드</li>
-    </ul>
-    <h3>Information</h3>
-    <p>
-      2차 세계대전 이후 설립된 게뎁 농장은 유기농 인증 농장으로 여성의 고용
-      창출과 지역사회 발전에 기여하며 3대째 이어져 내려오는 오랜 역사를 가진
-      농장입니다. 게뎁 농장은 SCAA 인증을 받은 커피 품질관리 실험실을 갖추고
-      있어 철처한 관리를 통해 스페셜티 커피를 생산합니다.
-    </p>
-    <h3>Flavor Note</h3>
-    <p>은은하고 다채로운 꽃향, 망고, 다크 체리, 달달함이 입안 가득.</p>
-  </div>
+<div id="detail">
+  <h2>상품 상세 정보</h2>
+  <ul>
+    <li>원산지 : 에디오피아</li>
+    <li>지 역 : 이르가체프 코체레</li>
+    <li>농 장 : 게뎁</li>
+    <li>고 도 : 1,950 ~ 2,000 m</li>
+    <li>품 종 : 지역 토착종</li>
+    <li>가공법 : 워시드</li>
+  </ul>
+  <h3>Information</h3>
+  <p>
+    2차 세계대전 이후 설립된 게뎁 농장은 유기농 인증 농장으로 여성의 고용
+    창출과 지역사회 발전에 기여하며 3대째 이어져 내려오는 오랜 역사를 가진
+    농장입니다. 게뎁 농장은 SCAA 인증을 받은 커피 품질관리 실험실을 갖추고
+    있어 철처한 관리를 통해 스페셜티 커피를 생산합니다.
+  </p>
+  <h3>Flavor Note</h3>
+  <p>은은하고 다채로운 꽃향, 망고, 다크 체리, 달달함이 입안 가득.</p>
+</div>
 
 
 * js *
@@ -427,6 +435,8 @@ myRect.addEventListener("mouseout", function () {
     > newP.setAttributeNode(attribute)
     < null // Elements를 확인해보면 p태그에 "accent"라는 클래스명이 추가되었다.
     ```
+
+    <br>
 
     > 위 방법 이외에도 setAttribute() 함수를 사용할 수 있다.
     >
