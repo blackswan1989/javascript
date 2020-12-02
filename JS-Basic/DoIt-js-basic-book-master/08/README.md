@@ -20,8 +20,8 @@ html이나 css로 일일히 수정하고 제어하는 것보다 Javascript의 DO
 ### 2) DOM트리 - 나무처럼 생긴 DOM구조
 
 아래 그림에서 HTML노드는 Element Node이면서 다른 Element Node가 뻗어 나가기 시작하는 노드이기도 하다.  
-이를 루트 노드(Root Node)라고 부른다. 그리고 특정 노드를 기준으로 위에 붙어 있는 노드를 부모노드, 아래에 있는 노드는 자식 노드라고 부른다.  
-예를 들어 head 노드의 부모는 html노드이고 자식노드는 title노드 이다.
+이를 루트 노드(Root Node)라고 부른다. 그리고 특정 노드를 기준으로 위에 붙어 있는 노드를 부모노드,  
+아래에 있는 노드는 자식 노드라고 부른다. 예를 들어 head 노드의 부모는 html노드이고 자식노드는 title노드 이다.
 
 ![html-dom-tree](https://user-images.githubusercontent.com/67410919/100819176-f5df8900-348e-11eb-86f8-dc3a46a15bbf.png)
 
