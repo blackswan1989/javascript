@@ -1,0 +1,268 @@
+# jQuery - Traversing
+
+URL : https://www.w3schools.com/jquery/jquery_traversing.asp
+
+---
+
+## 01. Traversing(횡단, 순회) 이란?
+
+"이동하다"를 의미하는 Traversing는 다른 요소와의 관계를 기반으로 HTML 요소를 "찾거나 선택"하는 데 사용된다.  
+하나의 선택으로 시작하여 원하는 요소에 도달 할 때까지 해당 선택을 통해 이동하게 된다.
+
+아래 이미지는 HTML 페이지를 트리 (DOM Tree)로 보여주고 있다.  
+jQuery의 Traversing을 사용하면 선택한(현재) 요소에서 시작하여 트리에서  
+쉽게 위(상위), 아래(하위) 및 옆(형제)으로 이동할 수 있다.  
+이 이동을 DOM Tree를 통해 traversing 또는 moving through(이동)이라고 한다.
+
+![DOM-Traverse](https://user-images.githubusercontent.com/67410919/101145574-54f2f880-365d-11eb-9a58-ec6fc17947ed.png)
+
+<br>
+
+- **Traversing the DOM**
+
+  - jQuery는 DOM을 Traversing 할 수 있는 다양한 메소드를 제공하고 있다.
+  - Traversing 방법의 가장 큰 범주는 DOM Tree Traversing이다.
+
+<br>
+<br>
+<br>
+
+## 02. Traversing - Ancestors(조상)
+
+DOM TREE를 순회(Traversing)하여 요소의 조상(Ancestors)을 찾을 수 있다.
+Ancestors의 종류로는 부모(parent), 조부모(grandparent), 증조부모(great-grandparent) 등이 있다.  
+DOM TREE를 탐색하는 데 유용한 세 가지 Methods는 다음과 같다.
+
+- parent()
+- parents()
+- parentsUntil()
+
+<br>
+
+### 1) parent() Method
+
+`parent()` 함수는 선택한 요소의 직접적인 부모(direct parent) 요소를 반환한다.  
+이 함수는 DOM 트리의 상위 한 단계(single level)로만 이동한다.
+
+- **Examples :**
+
+  ```
+  // span의 직접적인 부모요소인 li박스에만 css가 적용됨을 확인할 수 있다.
+
+  $(document).ready(function(){
+    $("span").parent().css({"color": "red", "border": "2px solid red"});
+  });
+
+
+  // 예제 공통
+  .ancestors * {
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+  }
+
+  <div class="ancestors">
+    <div style="width:500px;">div (great-grandparent)
+      <ul>ul (grandparent)
+        <li>li (direct parent)
+          <span>span</span>
+        </li>
+      </ul>
+    </div>
+
+    <div style="width:500px;">div (grandparent)
+      <p>p (direct parent)
+        <span>span</span>
+      </p>
+    </div>
+  </div>
+  ```
+
+  ![parent](https://user-images.githubusercontent.com/67410919/101145552-4d335400-365d-11eb-9c09-9a5b62ca11dc.PNG)
+
+<br>
+<br>
+
+### 2) parents() Method
+
+`parents()` 함수는 복수형의 이름에서 알 수 있듯 선택한 요소의 문서의 루트 요소(<html>)까지 모든 상위 요소를 반환한다.
+
+- **Examples :**
+
+  ```
+  // span의 모든 부모요소에 css가 적용된 것을 확인할 수 있다.
+
+  $(document).ready(function(){
+    $("span").parents().css({"color": "red", "border": "2px solid red"});
+  });
+  ```
+
+  ![parents](https://user-images.githubusercontent.com/67410919/101146164-05f99300-365e-11eb-8bb4-3d2454e3d142.PNG)
+
+<br>
+<br>
+
+### 3) parentsUntil() Method
+
+`parentsUntil()` 함수는 주어진 두 인수 사이의 모든 상위 요소를 반환한다.
+
+- **Examples :**
+
+  ```
+  // span과 div 사이의 모든 상위 요소에 css가 적용된 것을 확인할 수 있다.
+
+  $(document).ready(function(){
+    $("span").parentsUntil("div").css({"color": "red", "border": "2px solid red"});
+  });
+  ```
+
+  ![parentsUntil](https://user-images.githubusercontent.com/67410919/101146669-a18b0380-365e-11eb-81c8-a4e16435d05b.PNG)
+
+<br>
+<br>
+<br>
+
+## 03. Traversing - Descendants(자손)
+
+DOM TREE를 순회(Traversing)하여 요소의 하위 항목(Descendants)들을 찾을 수 있습니다.  
+Descendant에는 child(자녀), grandchild(손자), great-grandchild(증손자) 등이 있다.  
+DOM TREE를 순회하는 데 유용한 두 가지 Method는 다음과 같다.
+
+- children()
+- find()
+
+<br>
+
+### 1) children() Method
+
+`children()` 함수는 선택한 요소의 모든 직계 자식(direct children)을 반환한다.  
+이 함수는 DOM TREE의 하위 한 단계(single level)로만 이동한다.
+
+- **Examples 1 :**
+
+  div요소의 직계 자식인 모든 p element에 css가 적용됨을 알 수 있다.
+
+  ```
+  $(document).ready(function(){
+    $("div").children().css({"color": "red", "border": "2px solid red"});
+  });
+
+
+  // 예제 공통
+  .descendants * {
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+  }
+
+  <div요소의 class="descendants" style="width:500px;">div (current element)
+    <p>p (child)
+      <span>span (grandchild)</span>
+    </p>
+    <p>p (child)
+      <span>span (grandchild)</span>
+    </p>
+  </div요소의>
+  ```
+
+  ![children](https://user-images.githubusercontent.com/67410919/101147740-1ca0e980-3660-11eb-92e2-943b67a3fe42.PNG)
+
+<br>
+
+- **Examples 2 :**
+
+  선택적으로 매개 변수를 사용하여 하위 검색을 필터링 할 수도 있다.  
+  `children("p.first")`를 통해 `first` 클래스 이름을 가진 p태그에만 css가 적용된다.
+
+  ```
+  $(document).ready(function(){
+    $("div").children("p.first").css({"color": "red", "border": "2px solid red"});
+  });
+
+
+  <div class="descendants" style="width:500px;">div (current element)
+    <p class="first"> p(child)
+      <span>span (grandchild)</span>
+    </p>
+    <p class="second"> p(child)
+      <span>span (grandchild)</span>
+    </p>
+  </div>
+  ```
+
+  _url : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_children2_
+
+<br>
+<br>
+
+### 2) find() Method
+
+`find()` 함수는 선택된 요소의 하위 요소에서 마지막 하위 요소까지 반환한다.
+
+<br>
+
+- **Examples 1 :**
+
+  `div`하위 요소 중 `find("span")`을 모두 찾아 css를 적용 시켜 준다.  
+  따라서 `p`태그에는 css가 적용되지 않는다.
+
+  ```
+  $(document).ready(function(){
+    $("div").find("span").css({"color": "red", "border": "2px solid red"});
+  });
+
+
+  <div class="descendants" style="width:500px;">div (current element)
+    <span>span
+        <p>p (child)
+          <span>span (grandchild)</span>
+          <span>span (grandchild)</span>
+          <span>span (grandchild)</span>
+        </p>
+    </span>
+        <p>p (child)
+          <span>span (grandchild)
+              <span>span (grandchild)</span>
+          </span>
+        </p>
+  </div>
+  ```
+
+  ![find](https://user-images.githubusercontent.com/67410919/101149982-fdf02200-3662-11eb-85ed-5b4c9153d6e5.PNG)
+
+<br>
+
+- **Examples 2 :**
+
+  `div`
+
+  ```
+  $(document).ready(function(){
+    $("div").find("*").css({"color": "red", "border": "2px solid red"});
+  });
+
+
+  <div class="descendants" style="width:500px;">div (current element)
+    <p>p (child)
+      <span>span (grandchild)</span>
+    </p>
+    <p>p (child)
+      <span>span (grandchild)</span>
+    </p>
+  </div>
+  ```
+
+<br>
+<br>
+<br>
+<br>
+
+---
+
+### # jQuery Traversing Reference
+
+URL : https://www.w3schools.com/jquery/jquery_ref_traversing.asp
