@@ -1,4 +1,4 @@
-# jQuery Effects
+# jQuery - Effects
 
 URL : https://www.w3schools.com/jquery/jquery_hide_show.asp\
 
@@ -50,10 +50,11 @@ $(document).ready(function(){
   ```
 
 <br>
+<br>
 
 ### 2) toggle()
 
-`toggle()`함수를 사용하여 요소 숨기기와 표시간에 전환 할 수도 있다.  
+`toggle()`함수를 사용하여 요소 숨기기와 표시간에 전환할 수도 있다.  
 즉, 표시된 요소는 숨겨지고 숨겨진 요소는 표시된다.
 
 ```
@@ -77,6 +78,7 @@ $(document).ready(function(){
 - `speed` parameter는 `"slow"`, `"fast"`또는 "밀리 초" 값을 사용할 수 있다.
 - `callback` parameter는 페이딩이 완료된 후 실행되는 함수이다.
 
+<br>
 <br>
 <br>
 
@@ -116,6 +118,7 @@ Fading을 사용하면 요소를 표시하거나 표시하지 않을 수 있다.
   - `callbac`k` parameter는 페이딩이 완료된 후 실행되는 함수이다.
 
 <br>
+<br>
 
 ### 2) fadeOut()
 
@@ -131,6 +134,7 @@ Fading을 사용하면 요소를 표시하거나 표시하지 않을 수 있다.
     });
   ```
 
+<br>
 <br>
 
 ### 3) fadeToggle()
@@ -149,6 +153,7 @@ Fading을 사용하면 요소를 표시하거나 표시하지 않을 수 있다.
   });
   ```
 
+<br>
 <br>
 
 ### 4) fadeTo ()
@@ -173,6 +178,7 @@ Fading을 사용하면 요소를 표시하거나 표시하지 않을 수 있다.
   - `fadeTo()`함수의 필수인 불투명도 parameter는 주어진 불투명도(0과 1 사이의 값)로 페이드를 지정한다.
   - `callback` parameter는 함수가 완료된 후 실행 실행되는 함수이다.
 
+<br>
 <br>
 <br>
 
@@ -222,6 +228,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   - `callback` parameter는 슬라이딩이 완료된 후 실행 실행되는 함수이다.
 
 <br>
+<br>
 
 ### 2) slideUp()
 
@@ -258,8 +265,9 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   ```
 
 <br>
+<br>
 
-### 2) slideToggle ()
+### 3) slideToggle ()
 
 - **Examples :**
 
@@ -275,6 +283,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   });
   ```
 
+<br>
 <br>
 <br>
 
@@ -314,6 +323,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   > 따라서 요소의 위치를 조작하려면 CSS 위치 속성을 relative, fixed, absolute 등으로 설정해야 한다.
 
 <br>
+<br>
 
 ### 2) animate() - Manipulate Multiple Properties
 
@@ -343,6 +353,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   > 따라서 색상에 애니메이션을 적용하려면 jQuery.com에서 색상 애니메이션 플러그인을 별도로 다운로드 해야 한다.
 
 <br>
+<br>
 
 ### 3) animate() - Using Relative Values
 
@@ -365,6 +376,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   ```
 
 <br>
+<br>
 
 ### 4) animate() - Using Pre-defined Values
 
@@ -384,6 +396,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   });
   ```
 
+<br>
 <br>
 
 ### 5) animate() - Uses Queue Functionality
@@ -414,6 +427,8 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   <div style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
   ```
 
+<br>
+
 - **Examples 2 :**
 
   ```
@@ -432,6 +447,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
   <div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
   ```
 
+<br>
 <br>
 <br>
 
@@ -503,6 +519,7 @@ Slide 함수들은 요소를 위아래로 슬라이딩 효과를 만들 수 있�
 
   <br>
   <br>
+  <br>
 
 ## 06. jQuery Callback Functions
 
@@ -550,6 +567,7 @@ JavaScript문은 한 줄씩 실행된다. 그러나 효과를 사용하면 효�
   });
   ```
 
+  <br>
   <br>
   <br>
 

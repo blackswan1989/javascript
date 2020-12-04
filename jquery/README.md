@@ -13,6 +13,8 @@ The jQuery syntax is tailor-made for selecting HTML elements and performing some
 **- A (selector) to "query (or find)" HTML elements**  
 **- A jQuery action() to be performed on the element(s)**
 
+<br>
+
 #### Examples:
 
 - `$(this).hide(); // 현재 element를 숨긴다.`
@@ -25,6 +27,7 @@ The jQuery syntax is tailor-made for selecting HTML elements and performing some
 
 - _jQuery는 CSS 구문을 사용하여 요소를 선택한다._
 
+<br>
 <br>
 
 ### 2) The Document Ready Event (문서 준비 이벤트)
@@ -52,6 +55,7 @@ $(function(){
 ```
 
 <br>
+<br>
 
 ### 3) jQuery Selectors
 
@@ -73,6 +77,7 @@ $(function(){
   - `$("tr:even")` : table의 row행의 모든 모든 짝수 tr elements를 선택한다.
   - `$("tr:odd")` : table의 row행의 모든 홀수 tr elements를 선택한다.
 
+<br>
 <br>
 
 ### 4) The element Selector
@@ -97,6 +102,7 @@ $(function(){
   ```
 
 <br>
+<br>
 
 ### 5) The #id Selector
 
@@ -119,8 +125,9 @@ $(function(){
   ```
 
 <br>
+<br>
 
-### 6) The .class Selector
+### 6) The class Selector
 
 - jQuery .class Selector는 특정 클래스가있는 element를 찾는다.
 - 특정 클래스가있는 요소를 찾으려면 `$(".test")`처럼 마침표 문자와 클래스 이름을 작성하면 된다.

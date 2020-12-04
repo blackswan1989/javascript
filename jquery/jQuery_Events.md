@@ -1,4 +1,4 @@
-# jQuery Event Methods
+# jQuery - Event Methods
 
 jQuery is tailor-made to respond to events in an HTML page.  
 url : https://www.w3schools.com/jquery/jquery_events.asp
@@ -16,10 +16,11 @@ url : https://www.w3schools.com/jquery/jquery_events.asp
 **- selecting a radio button**  
 **- clicking on an element**
 
-#### 대표적인 DOM 이벤트 :
+#### # 대표적인 DOM 이벤트 :
 
 ![jQuery_events](https://user-images.githubusercontent.com/67410919/100960940-a79cb980-3564-11eb-8906-e096b70c06f5.png)
 
+<br>
 <br>
 
 ### 2) Event Method에 대한 jQuery 구문
@@ -36,6 +37,7 @@ url : https://www.w3schools.com/jquery/jquery_events.asp
   });
   ```
 
+<br>
 <br>
 
 ### 3) 일반적으로 사용되는 jQuery Event Method
@@ -160,6 +162,7 @@ url : https://www.w3schools.com/jquery/jquery_events.asp
   ```
 
   <br>
+  <br>
 
 ### 4) The on() Method
 
@@ -182,6 +185,8 @@ url : https://www.w3schools.com/jquery/jquery_events.asp
   <p>Click me too!</p>
   ```
 
+  <br>
+
 - 여러 이벤트를 `<p>` element에 연결 :
 
   ```
@@ -203,6 +208,8 @@ url : https://www.w3schools.com/jquery/jquery_events.asp
   <p>Click or move the mouse pointer over this paragraph.</p>
   ```
 
+<br>
+<br>
 <br>
 <br>
 

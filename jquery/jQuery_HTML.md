@@ -4,8 +4,6 @@ URL : https://www.w3schools.com/jquery/jquery_dom_get.asp
 
 ---
 
-<br>
-
 ## 01. 콘텐츠(Content) 및 속성(Attributes)의 Get & Set
 
 jQuery에는 HTML 요소 및 속성을 변경하고 조작하는 강력한 방법이 포함되어 있다.
@@ -21,6 +19,7 @@ jQuery의 매우 중요한 부분 중 하나는 DOM을 조작 할 수 있다는 
   **The DOM defines a standard for accessing HTML and XML documents:**  
   "The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."
 
+<br>
 <br>
 
 ### 2) Get Content - `text()`, `html()`, `val()`
@@ -74,6 +73,7 @@ jQuery의 매우 중요한 부분 중 하나는 DOM을 조작 할 수 있다는 
   ```
 
 <br>
+<br>
 
 ### 2) Set Content - `text()`, `html()`, `val()`
 
@@ -99,6 +99,7 @@ jQuery의 매우 중요한 부분 중 하나는 DOM을 조작 할 수 있다는 
 
   _url : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_dom_html_set_
 
+<br>
 <br>
 
 ### 3) Callback Function for `text()`, `html()`, `val()`
@@ -138,12 +139,11 @@ jQuery의 매우 중요한 부분 중 하나는 DOM을 조작 할 수 있다는 
   _url : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_dom_html_callback_
 
 <br>
+<br>
 
 ### 4) Get Attributes - `attr()`
 
 `attr()` 함수는 속성 값을 가져 오는 데 사용된다.
-
-<br>
 
 - **Examples : `attr()`함수로 링크에서 `"href"`속성 값을 가져 오는 방법을 확인할 수 있다.**
 
@@ -165,7 +165,8 @@ jQuery의 매우 중요한 부분 중 하나는 DOM을 조작 할 수 있다는 
   </body>
   ```
 
-  <br>
+<br>
+<br>
 
 ### 5) Set Attributes - `attr()`
 
@@ -228,6 +229,7 @@ jQuery를 사용하면 새로운 요소 및 콘텐츠를 쉽게 추가 할 수 �
   _url : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_append_
 
 <br>
+<br>
 
 ### 2) prepend() Method
 
@@ -252,12 +254,13 @@ jQuery를 사용하면 새로운 요소 및 콘텐츠를 쉽게 추가 할 수 �
   _url : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_prepend_
 
 <br>
+<br>
 
 ### 3) append() & prepend() 함수를 사용해서 여러가지 요소를 추가하기
 
 위의 두 가지 예제에서는 선택한 HTML 요소의 시작이나 끝 부분에 일부 텍스트 또는 HTML만 삽입했다.  
 그러나 `append()`및 `prepend()`함수는 무한한 수의 새 요소를 매개 변수로 사용할 수 있다.  
-새로운 Element는 텍스트나 HTML(위의 예에서 수행 한 것처럼), jQuery 또는 JavaScript 코드 및 DOM 요소를 사용하여 생성 할 수 있다.
+새로운 Element는 텍스트나 HTML, jQuery 또는 JavaScript 코드 및 DOM 요소를 사용하여 생성 할 수 있다.
 
 - **Examples :**
 
@@ -288,11 +291,12 @@ jQuery를 사용하면 새로운 요소 및 콘텐츠를 쉽게 추가 할 수 �
   _url : https://www.w3schools.com/code/tryit.asp?filename=GLBQZBQW1XQR_
 
 <br>
+<br>
 
 ### 4) after() & before() 함수를 사용해서 여러가지 요소를 추가하기
 
-`after()`및 `before()` 함수는 무한한 수의 새 요소를 매개 변수로 사용할 수 있다.
-새로운 Element는 텍스트나 HTML(위의 예에서 수행 한 것처럼), jQuery 또는 JavaScript 코드 및 DOM 요소를 사용하여 생성 할 수 있다.
+`after()`및 `before()` 함수는 무한한 수의 새 요소를 매개 변수로 사용할 수 있다.  
+새로운 Element는 텍스트나 HTML, jQuery 또는 JavaScript 코드 및 DOM 요소를 사용하여 생성 할 수 있다.
 
 - **Examples 1 :**
 
@@ -316,6 +320,8 @@ jQuery를 사용하면 새로운 요소 및 콘텐츠를 쉽게 추가 할 수 �
   ```
 
   _url : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_after_
+
+  <br>
 
 - **Examples 2 :**
 
@@ -489,6 +495,7 @@ jQuery를 사용하면 요소의 스타일을 쉽게 조작 할 수 있다.
   ```
 
 <br>
+<br>
 
 ### 4) toggleClass() Method
 
@@ -613,11 +620,14 @@ jQuery를 사용하면 요소 및 브라우저 창의 크기로 작업하기가 
 ![jquery-width-height](https://user-images.githubusercontent.com/67410919/101134332-8d8ad600-364d-11eb-9902-547a7feb40d7.png)
 
 <br>
+<br>
 
 ### 2) width() and height() Methods
 
 - `width()` 함수는 padding, border, margin값을 '제외'한 요소의 너비를 설정하거나 반환한다.
 - `height()` 함수는 padding, border, margin값을 '제외'한 요소의 높이를 설정하거나 반환한다.
+
+  <br>
 
   - **Example :**
 
@@ -649,11 +659,14 @@ jQuery를 사용하면 요소 및 브라우저 창의 크기로 작업하기가 
     ```
 
 <br>
+<br>
 
 ### 3) innerWidth() and innerHeight() Methods
 
 - `innerWidth()` 함수는 'padding값을 포함'한 요소의 너비를 반환한다.
 - `innerHeight()` 함수는 'padding값을 포함'한 요소의 높이를 반환한다.
+
+  <br>
 
   - **Example :**
 
@@ -671,6 +684,7 @@ jQuery를 사용하면 요소 및 브라우저 창의 크기로 작업하기가 
     ```
 
 <br>
+<br>
 
 ### 4) outerWidth() and outerHeight() Methods
 
@@ -678,6 +692,8 @@ jQuery를 사용하면 요소 및 브라우저 창의 크기로 작업하기가 
 - `outerHeight()` 함수는 padding, border값을 포함한 요소의 높이를 반환한다.
 - `outerWidth(true)` 함수는 padding, border, margin값을 모두 포함한 요소의 너비를 반환한다.
 - `outerHeight(true)` 함수는 padding, border, margin값을 모두 포함한 요소의 높이를 반환한다.
+
+  <br>
 
   - **Example :**
 
