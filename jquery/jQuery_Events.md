@@ -24,17 +24,17 @@ url : https://www.w3schools.com/jquery/jquery_events.asp
 
 ### 2) Event Method에 대한 jQuery 구문
 
-jQuery에서 대부분의 DOM 이벤트에는 동일한 jQuery 메서드가 있다.  
-페이지의 모든 단락에 클릭 이벤트를 할당하려면 `$("p").click();`를 입력하면 된다.  
-다음 단계는 이벤트가 발생할 때 어떤 일이 발생해야하는지 정의하는 것으로, 이벤트에 함수를 전달해야한다.
+- jQuery에서 대부분의 DOM 이벤트에는 동일한 jQuery 메서드가 있다.
+- 페이지의 모든 '단락'에 클릭 이벤트를 할당하려면 `$("p").click();`를 입력하면 된다.
+- 다음 단계는 이벤트가 발생할 때 어떤 일이 발생해야하는지 정의하는 것으로, 이벤트에 함수를 전달해야한다.
 
-```
-$("p").click(function(){
+  ```
+  $("p").click(function(){
 
-  // action goes here!!
+    // action goes here!!
 
-});
-```
+  });
+  ```
 
 <br>
 
@@ -165,41 +165,43 @@ $("p").click(function(){
 
 `on()`함수는 선택한 요소에 대해 하나 이상의 이벤트 처리기를 연결한다.
 
-**1. Attach a click event to a `<p>` element:**
+  <br>
 
-```
-$(document).ready(function(){
-  $("p").on("click", function(){
-    $(this).hide();
+- 클릭 이벤트를 `<p>` element에 첨부 :
+
+  ```
+  $(document).ready(function(){
+    $("p").on("click", function(){
+      $(this).hide();
+    });
   });
-});
 
 
-<p>If you click on me, I will disappear.</p>
-<p>Click me away!</p>
-<p>Click me too!</p>
-```
+  <p>If you click on me, I will disappear.</p>
+  <p>Click me away!</p>
+  <p>Click me too!</p>
+  ```
 
-**2. Attach multiple event handlers to a `<p>` element:**
+- 여러 이벤트를 `<p>` element에 연결 :
 
-```
-$(document).ready(function(){
-  $("p").on({
-    mouseenter: function(){
-      $(this).css("background-color", "lightgray");
-    },
-    mouseleave: function(){
-      $(this).css("background-color", "lightblue");
-    },
-    click: function(){
-      $(this).css("background-color", "yellow");
-    }
+  ```
+  $(document).ready(function(){
+    $("p").on({
+      mouseenter: function(){
+        $(this).css("background-color", "lightgray");
+      },
+      mouseleave: function(){
+        $(this).css("background-color", "lightblue");
+      },
+      click: function(){
+        $(this).css("background-color", "yellow");
+      }
+    });
   });
-});
 
 
-<p>Click or move the mouse pointer over this paragraph.</p>
-```
+  <p>Click or move the mouse pointer over this paragraph.</p>
+  ```
 
 <br>
 <br>
