@@ -238,7 +238,7 @@ DOM TREE를 순회하는 데 유용한 두 가지 Method는 다음과 같다.
 
 - **Examples 2 :**
 
-  `div`
+  `div`의 하위 요소들을 `find("*")`로 모두 찾아 css를 적용시켜준다.
 
   ```
   $(document).ready(function(){
@@ -255,6 +255,8 @@ DOM TREE를 순회하는 데 유용한 두 가지 Method는 다음과 같다.
     </p>
   </div>
   ```
+
+  <img width="514" alt="find2" src="https://user-images.githubusercontent.com/67410919/101240776-be920600-3734-11eb-8cad-967c9fc03572.png">
 
 <br>
 <br>
