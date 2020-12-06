@@ -319,11 +319,13 @@ There are many useful jQuery methods for traversing sideways in the DOM tree:
     </div>
   </body>
   ```
+  
+  <br>
 
 - **Examples 2 :**
 
   선택적으로 매개 변수를 사용하여 형제 검색을 필터링 할 수도 있다.  
-  다음 예는 <h2>의 형제중 모든`<p>` 형제 요소를 반환시켜 css를 적용시킨다.  
+  아래 코드는 <h2>의 형제중 모든 `<p>` 형제 요소를 반환시켜 css를 적용시킨다.  
 
   ```
   $(document).ready(function(){
