@@ -272,13 +272,13 @@ jQuery를 사용하면 요소의 형제를 찾기 위해 DOM 트리에서 옆으
 
 There are many useful jQuery methods for traversing sideways in the DOM tree:
 
-siblings()
-next()
-nextAll()
-nextUntil()
-prev()
-prevAll()
-prevUntil()
+- siblings()
+- next()
+- nextAll()
+- nextUntil()
+- prev()
+- prevAll()
+- prevUntil()
 
 <br>
 <br>
