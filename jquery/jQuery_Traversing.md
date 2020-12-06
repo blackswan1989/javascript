@@ -401,7 +401,7 @@ There are many useful jQuery methods for traversing sideways in the DOM tree:
 
 ### 5) prev(), prevAll(), prevUntil() Method
 
-`prev()`, `prevAll()`, `prevUntil()` 함수들은 위의 함수들과 같지만 역기능을 가진 방법처럼 작동한다.
+`prev()`, `prevAll()`, `prevUntil()` 함수들은 위의 함수들과 같지만 역기능을 가진 방법처럼 작동한다.  
 즉 그들은 이전 형제 요소를 반환시켜준다(대신 앞으로의 DOM 트리의 요소를 형제를 따라 뒤로 이송).
 
 <br>
