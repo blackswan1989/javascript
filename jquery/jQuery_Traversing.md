@@ -261,10 +261,156 @@ DOM TREE를 순회하는 데 유용한 두 가지 Method는 다음과 같다.
 <br>
 <br>
 <br>
+
+## 04. Traversing - Siblings(형제)
+
+jQuery를 사용하면 요소의 형제를 찾기 위해 DOM 트리에서 옆으로 이동할 수 있고 형제는 같은 부모를 공유한다.  
+
+<br>
+
+### # Traversing Sideways in The DOM Tree
+
+There are many useful jQuery methods for traversing sideways in the DOM tree:
+
+siblings()
+next()
+nextAll()
+nextUntil()
+prev()
+prevAll()
+prevUntil()
+
+<br>
+<br>
+
+### 1) siblings() Method
+
+`siblings()`함수는 선택한 요소의 모든 형제 요소를 반환한다.
+
+- **Examples 1 :**
+
+  `h2`의 모든 형제 element들에 css가 적용된다.  
+  `h2`자신과 부모 element인 `div` `body`에는 적용되지 않는다.  
+
+  ```
+  <script>
+    $(document).ready(function(){
+      $("h2").siblings().css({"color": "red", "border": "2px solid red"});
+    });
+  </script>
+  
+  
+  // 예제 공통
+  .siblings * { 
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+  }
+
+  <body class="siblings">
+    <div>div (parent)
+      <p>p</p>
+      <span>span</span>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <p>p</p>
+    </div>
+  </body>
+  ```
+
+- **Examples 2 :**
+
+  선택적으로 매개 변수를 사용하여 형제 검색을 필터링 할 수도 있다.  
+  다음 예는 <h2>의 형제중 모든`<p>` 형제 요소를 반환시켜 css를 적용시킨다.
+
+  ```
+  $(document).ready(function(){
+    $("h2").siblings("p").css({"color": "red", "border": "2px solid red"});
+  });
+  ```
+
+<br>
+<br>
+
+### 2) next() Method
+
+`next()`함수는 선택한 element의 바로 다음 형제 요소를 반환해 준다.
+
+- **Examples :**
+
+  `h3`의 바로 다음 형제인 `<p>`에 css가 적용된다.
+
+  ```
+  $(document).ready(function(){
+    $("h3").next().css({"color": "red", "border": "2px solid red"});
+  });
+  ```
+  
+<br>
+<br>
+
+### 3) nextAll() Method
+
+`nextAll()`함수는 선택한 element의 다음 형제부터 모든 element를 반환시켜준다.
+
+- **Examples :**
+
+  `nextAll()`을 사용하면 선택한 `span`부터 `h2` `h3` `p`태그에 css가 적용된다.
+
+  ```
+  $(document).ready(function(){
+    $("span").nextAll().css({"color": "red", "border": "2px solid red"});
+  });
+  ```
+  
+<br>
+<br>
+
+### 4) nextUntil() Method
+
+`nextUntil()`함수는 주어진 두 인수 사이의 모든 다음 형제 요소를 반환시켜 준다.
+
+- **Examples :**
+
+  `h2`와 `h6`사이의 모든 element들이 반환된다.  
+  즉 h3, h4, h5에 css가 적용된다.
+
+  ```
+  <script>
+    $(document).ready(function(){
+      $("h2").nextUntil("h6").css({"color": "red", "border": "2px solid red"});
+    });
+  </script>
+  
+  
+  <div>div (parent)
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <p>p</p>
+  </div>
+  ```
+
+<br>
+<br>
+
+### 5) prev(), prevAll(), prevUntil() Method
+
+`prev()`, `prevAll()`, `prevUntil()` 함수들은 위의 함수들과 같지만 역기능을 가진 방법처럼 작동한다.
+즉 그들은 이전 형제 요소를 반환시켜준다(대신 앞으로의 DOM 트리의 요소를 형제를 따라 뒤로 이송).
+
+<br>
+<br>
+<br>
 <br>
 
 ---
 
-### # jQuery Traversing Reference
+### # jQuery Traversing Reference 
 
 URL : https://www.w3schools.com/jquery/jquery_ref_traversing.asp
