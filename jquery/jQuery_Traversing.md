@@ -349,6 +349,15 @@ There are many useful jQuery methods for traversing sideways in the DOM tree:
   $(document).ready(function(){
     $("h3").next().css({"color": "red", "border": "2px solid red"});
   });
+  
+  
+  <div>div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+  </div>
   ```
   
 <br>
@@ -366,6 +375,14 @@ There are many useful jQuery methods for traversing sideways in the DOM tree:
   $(document).ready(function(){
     $("span").nextAll().css({"color": "red", "border": "2px solid red"});
   });
+  
+  <div>div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <p>p</p>
+  </div>
   ```
   
 <br>
